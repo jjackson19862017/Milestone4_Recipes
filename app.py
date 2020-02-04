@@ -5,8 +5,8 @@ from bson.objectid import ObjectId
 
 
 app = Flask(__name__)
-app.config["MONGO_DBNAME"] = '' # Insert Database Name
-app.config["MONGO_URI"] = '' # Insert Database URI from MongoDB
+app.config["MONGO_DBNAME"] = 'recipes' # Insert Database Name
+app.config["MONGO_URI"] = 'mongodb+srv://<username>:<password>@mycluster-kbtfd.gcp.mongodb.net/test?retryWrites=true&w=majority' # Insert Database URI from MongoDB
 
 mongo = PyMongo(app)
 
