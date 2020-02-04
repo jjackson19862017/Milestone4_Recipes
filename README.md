@@ -83,9 +83,15 @@ In addition, if it is not obvious, you should also describe how to run your code
 
 # Timeline
 
-## Tuesday 4th Feb 2020 - Setup,
+## Tuesday 4th Feb 2020,
+
+### Setup
 
 Picked which project I would like to do, I chose the Recipe Project.
 I have created my website structure from my initial clone of the Code Institute Full Template.
 This includes folder and file structure.
 I decided to do this as my initial setup as I am trying to make best use of my time.
+
+### Inserting Content Block
+
+Just inserted the Content Block code to all templates except base.html
