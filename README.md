@@ -117,4 +117,12 @@ I then had a problem because my enviroment secret codes weren't being read, so I
 
 I have just confirmed that this works.
 
+### File Structure Cleanup
 
+I have just deleted some files that I thought I might.
+
+My first thought was to setup a user login space so people could login and create recipes, and edit or delete their recipes.  This would stop other users from deleting other users recipes.
+
+However I have thought of a different view, with the input of my mentor.  I am going to use a users email address to validate them.
+
+For example when a user creates a recipe, a field that would be required would ask them for their email address.  This wouldn't be seen by other users and is only known to them.  This would be needed to either edit or delete a recipe that they contribute to the site.
