@@ -2,15 +2,52 @@
 <html>
 
 <head>
+    <!--    Import Google Fonts     -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--    Import materialize.css  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <!--    My CSS Code     -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/mystyle.css')}}" type="text/css">
+    <!--    Let browser know website is optimized for mobile    -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 </head>
 
 <body>
-    <h1>Testing 1 2 3</h1>
-    <div class="container">
+    <nav>
+        <div class="nav-wrapper blue darken-4">
+            <a href="#" class="brand-logo blue-text text-accent-1">R.E.C.I.P.E.S</a>
+            <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons blue-text text-accent-1">menu</i></a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="#" class="blue-text text-accent-1"><i class="material-icons left blue-text text-accent-1">local_dining</i>View All Recipes</a></li>
+                <li><a href="#" class="blue-text text-accent-1"><i class="material-icons left blue-text text-accent-1">search</i>Search Recipes</a></li>
+                <li><a href="#" class="blue-text text-accent-1"><i class="material-icons left blue-text text-accent-1">help</i>About</a></li>
+            </ul>
+            <ul class="side-nav blue darken-4" id="mobile-demo">
+                <li><a href="#" class="blue-text text-accent-1"><i class="material-icons left blue-text text-accent-1">home</i>Home</a></li>
+                <li><a href="#" class="blue-text text-accent-1"><i class="material-icons left blue-text text-accent-1">local_dining</i>View All Recipes</a></li>
+                <li><a href="#" class="blue-text text-accent-1"><i class="material-icons left blue-text text-accent-1">search</i>Search Recipes</a></li>
+                <li><a href="#" class="blue-text text-accent-1"><i class="material-icons left blue-text text-accent-1">help</i>About</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container blue accent-1">
+        <h1 class="blue-text text-darken-4">Testing 1 2 3</h1>
+    </div>
+    <div class="container blue accent-1">
         {% block content %} {% endblock %}
     </div>
+
+    <!--    Import jQuery before materialize.js     -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <!--    Compiled and minified JavaScript        -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <!--    Document Ready Script   -->
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $(".button-collapse").sideNav();
+        });
+    </script>
 </body>
 
 </html>

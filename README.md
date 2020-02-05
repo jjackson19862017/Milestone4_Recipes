@@ -1,6 +1,8 @@
 # Refreshing Eatable Cuisine In Portable External Support
       R         E       C     I     P       E       S  
 
+[Deployment on Heroku](https://ms4recipes.herokuapp.com/)
+
 I plan to design and build, a forum of information that Users can contribute and share with the wider community.  I plan to use the information learnt in Flask, Python and using MongoDB
 
 I also plan to try and promote Cooking Tools.
@@ -126,3 +128,15 @@ My first thought was to setup a user login space so people could login and creat
 However I have thought of a different view, with the input of my mentor.  I am going to use a users email address to validate them.
 
 For example when a user creates a recipe, a field that would be required would ask them for their email address.  This wouldn't be seen by other users and is only known to them.  This would be needed to either edit or delete a recipe that they contribute to the site.
+
+### Created NavBar and Theme Colors
+
+I have updated base.html with Materialize's NavBar and Customize Options.
+
+I have gone for a Navbar that displays the Logo on the left with Links on the right-hand side.
+
+I have also gone for a pull out side bar for mobile devices.
+
+I have chosen a theme of blue.  The Navbar itself is Dark Blue, and the text is a lighter blue.
+
+For the main content on the page, I will reverse this.
