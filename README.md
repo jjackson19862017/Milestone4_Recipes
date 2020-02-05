@@ -1,4 +1,4 @@
-# Refreshing Eatable Cuisine In Portable External Support
+# Refreshing Edible Cuisine In Portable External Support
       R         E       C     I     P       E       S  
 
 [Deployment on Heroku](https://ms4recipes.herokuapp.com/)
@@ -77,7 +77,7 @@ In addition, if it is not obvious, you should also describe how to run your code
 - The text for section Y was copied from the [Wikipedia article Z](https://en.wikipedia.org/wiki/Z)
 
 ### Media
-- The photos used in this site were obtained from ...
+The main image used is from https://www.forksoverknives.com/plant-based-primer-beginners-guide-starting-plant-based-diet/#gs.w27a6h
 
 ### Acknowledgements
 
@@ -140,3 +140,9 @@ I have also gone for a pull out side bar for mobile devices.
 I have chosen a theme of blue.  The Navbar itself is Dark Blue, and the text is a lighter blue.
 
 For the main content on the page, I will reverse this.
+
+### Image Card
+
+I added an Image Card to the index.html, the image was taken from https://www.forksoverknives.com/plant-based-primer-beginners-guide-starting-plant-based-diet/#gs.w27a6h
+
+I modified the image so that the white card text could be seen more clearer.
