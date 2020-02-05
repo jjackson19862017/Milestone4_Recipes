@@ -141,8 +141,12 @@ I have chosen a theme of blue.  The Navbar itself is Dark Blue, and the text is 
 
 For the main content on the page, I will reverse this.
 
-### Image Card
+### Added Image Card
 
 I added an Image Card to the index.html, the image was taken from https://www.forksoverknives.com/plant-based-primer-beginners-guide-starting-plant-based-diet/#gs.w27a6h
 
 I modified the image so that the white card text could be seen more clearer.
+
+### Updated Image Card
+
+I added a bit of content to introduce people and what the purpose of the site is for.
