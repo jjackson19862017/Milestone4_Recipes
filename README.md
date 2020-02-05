@@ -95,3 +95,26 @@ I decided to do this as my initial setup as I am trying to make best use of my t
 ### Inserting Content Block
 
 Just inserted the Content Block code to all templates except base.html
+
+### Update app.py and base.html
+
+Added MongoDB connection code to app.py
+Added test code to base.html so I could see if my connection worked.
+
+### Created Procfile and Requirements.txt
+
+This allows flask to run in Heroku.
+
+## Wednesday 5th Feb 2020,
+
+### Securing my IDE
+
+After a chat with my mentor, I have decided to secure my chosen IDE which is VSCode.  I have failed to do this in previous tasks, however I have fixed that issue now. :)
+
+I used the "sudo pip3 install -r requirements.txt", to install all requirements to my Macbook.
+
+I then had a problem because my enviroment secret codes weren't being read, so I created a file and used gitignore.  This prevents the file from being uploaded to GitHub.
+
+I have just confirmed that this works.
+
+
