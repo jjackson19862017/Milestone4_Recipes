@@ -150,3 +150,7 @@ I modified the image so that the white card text could be seen more clearer.
 ### Updated Image Card
 
 I added a bit of content to introduce people and what the purpose of the site is for.
+
+### Added Footer to base.html
+
+I added a footer just to round off the site.  I also removed the about link in the Navbar due to the information being accessible in the footer.
