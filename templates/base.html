@@ -19,13 +19,13 @@
             <a href="{{ url_for('index') }}" class="brand-logo blue-text text-accent-1">R.E.C.I.P.E.S</a>
             <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons blue-text text-accent-1">menu</i></a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="#" class="blue-text text-accent-1"><i class="material-icons left blue-text text-accent-1">local_dining</i>View All Recipes</a></li>
+                <li><a href="{{ url_for('view_recipes') }}" class="blue-text text-accent-1"><i class="material-icons left blue-text text-accent-1">local_dining</i>View All Recipes</a></li>
                 <li><a href="#" class="blue-text text-accent-1"><i class="material-icons left blue-text text-accent-1">search</i>Search Recipes</a></li>
                 <li><a href="{{ url_for('add_recipe') }}" class="blue-text text-accent-1"><i class="material-icons left blue-text text-accent-1">add</i>Add Recipe</a></li>
             </ul>
             <ul class="side-nav blue darken-4" id="mobile-demo">
                 <li><a href="{{ url_for('index') }}" class="blue-text text-accent-1"><i class="material-icons left blue-text text-accent-1">home</i>Home</a></li>
-                <li><a href="#" class="blue-text text-accent-1"><i class="material-icons left blue-text text-accent-1">local_dining</i>View All Recipes</a></li>
+                <li><a href="{{ url_for('view_recipes') }}" class="blue-text text-accent-1"><i class="material-icons left blue-text text-accent-1">local_dining</i>View All Recipes</a></li>
                 <li><a href="#" class="blue-text text-accent-1"><i class="material-icons left blue-text text-accent-1">search</i>Search Recipes</a></li>
                 <li><a href="{{ url_for('add_recipe') }}" class="blue-text text-accent-1"><i class="material-icons left blue-text text-accent-1">add</i>Add Recipe</a></li>
             </ul>
