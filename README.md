@@ -154,3 +154,9 @@ I added a bit of content to introduce people and what the purpose of the site is
 ### Added Footer to base.html
 
 I added a footer just to round off the site.  I also removed the about link in the Navbar due to the information being accessible in the footer.
+
+## Thursday 6th Feb 2020,
+
+### Created Add Recipe Form
+
+I have put together a form that can take input, from a user.  I haven't setup the actual form submit yet.

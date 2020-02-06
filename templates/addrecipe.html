@@ -1,1 +1,88 @@
-{% extends 'base.html' %} {% block content %} {% endblock %}
+{% extends 'base.html' %} {% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col s12">
+            <h1 class="blue-text text-darken-4">Add Recipe</h1>
+            <p class="blue-text text-darken-4">Please fill out the form below, to add your recipe to the collection.</p>
+        </div>
+    </div>
+    <div class="row">
+        <form action="{{ url_for('add_recipe') }}" method="POST" class="col s12">
+            <div class="row">
+                <div class="input-field label col s8">
+                    <input id="recipe_name" name="recipe_name" type="text">
+                    <label for="recipe_name">Recipe Title</label>
+                </div>
+                <div class="input-field col s4">
+                    <input id="author" name="author" type="text">
+                    <label for="author">Author</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s6">
+                    <select id="meal_type" name="meal_type">
+                      <option value="" disabled selected>Meal Type</option>
+                      <option value="Breakfast">Breakfast</option>
+                      <option value="Lunch">Lunch</option>
+                      <option value="Evening">Evening</option>
+                      <option value="Dessert">Dessert</option>
+                      <option value="Baking">Baking</option>
+                    </select>
+                    <label></label>
+                </div>
+                <div class="input-field col s6">
+                    <select id="difficulty" name="difficulty">
+                      <option value="" disabled selected>Cooking Difficulty</option>
+                      <option value="Easy">Easy</option>
+                      <option value="Medium">Medium</option>
+                      <option value="Hard">Hard</option>
+                    </select>
+                    <label></label>
+                </div>
+                <div class="row">
+                    <div class="input-field label col s6">
+                        <input id="prep_time" name="prep_time" type="text">
+                        <label for="prep_time">Prep Time(Minutes)</label>
+                    </div>
+                    <div class="input-field label col s6">
+                        <input id="cooking_time" name="cooking_time" type="text">
+                        <label for="cooking_time">Cooking Time (Minutes)</label>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <textarea id="description" name="description" class="materialize-textarea"></textarea>
+                        <label for="description">Please Insert Recipe Description</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <textarea id="notes" name="notes" class="materialize-textarea"></textarea>
+                        <label for="notes">Please Add Any Notes</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <textarea id="ingredients" name="ingredients" class="materialize-textarea"></textarea>
+                        <label for="ingredients">ingredients Please</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <textarea id="method" name="method" class="materialize-textarea"></textarea>
+                        <label for="method">Method</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="email" name="email" type="email">
+                        <label for="email">Email - (This is required so you can edit or delete your recipes)</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <button class="btn waves-effect waves-light submitbtn" type="submit" name="action">Add Recipe
+                    <i class="material-icons right">playlist_add</i>
+                 </button>
+                </div>
+        </form>
+        </div>
+    </div>
+
+    {% endblock %}
