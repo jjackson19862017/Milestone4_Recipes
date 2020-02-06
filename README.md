@@ -160,3 +160,7 @@ I added a footer just to round off the site.  I also removed the about link in t
 ### Created Add Recipe Form
 
 I have put together a form that can take input, from a user.  I haven't setup the actual form submit yet.
+
+### Add Recipe Form Styling
+
+I changed the default colours, to something that would match my colour theme.

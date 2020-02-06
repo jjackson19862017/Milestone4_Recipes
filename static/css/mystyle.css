@@ -6,7 +6,7 @@ body {
 /* label color */
 
 .input-field label {
-    color: #000;
+    color: ##0D47A1 !important;
     text-transform: uppercase;
     font-size: 15px;
 }
@@ -15,40 +15,46 @@ body {
 /* label focus color */
 
 .input-field input[type=text]:focus+label {
-    color: #000;
+    color: ##0D47A1 !important;
 }
 
 
 /* label underline focus color */
 
 .input-field input[type=text]:focus {
-    border-bottom: 1px solid #000;
-    box-shadow: 0 1px 0 0 #000;
+    border-bottom: 1px solid ##0D47A1 !important;
+    box-shadow: 0 1px 0 0 ##0D47A1 !important;
 }
 
 
 /* valid color */
 
 .input-field input[type=text].valid {
-    border-bottom: 1px solid #000;
-    box-shadow: 0 1px 0 0 #000;
+    border-bottom: 1px solid ##0D47A1 !important;
+    box-shadow: 0 1px 0 0 ##0D47A1 !important;
 }
 
 
 /* invalid color */
 
 .input-field input[type=text].invalid {
-    border-bottom: 1px solid #000;
-    box-shadow: 0 1px 0 0 #000;
+    border-bottom: 1px solid ##0D47A1 !important;
+    box-shadow: 0 1px 0 0 ##0D47A1 !important;
 }
 
 
 /* icon prefix focus color */
 
 .input-field .prefix.active {
-    color: #000;
+    color: ##0D47A1 !important;
 }
 
 .submitbtn {
     background-color: #0D47A1;
+}
+
+.rnd_border {
+    border: 4px solid #0D47A1;
+    border-radius: 6px;
+    background-color: white;
 }

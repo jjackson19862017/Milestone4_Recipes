@@ -1,6 +1,6 @@
 {% extends 'base.html' %} {% block content %}
 <div class="container">
-    <div class="row">
+    <div class="row center">
         <div class="col s12">
             <h1 class="blue-text text-darken-4">Add Recipe</h1>
             <p class="blue-text text-darken-4">Please fill out the form below, to add your recipe to the collection.</p>
@@ -8,72 +8,72 @@
     </div>
     <div class="row">
         <form action="{{ url_for('add_recipe') }}" method="POST" class="col s12">
-            <div class="row">
-                <div class="input-field label col s8">
+            <div class="row ">
+                <div class="input-field label col s6">
                     <input id="recipe_name" name="recipe_name" type="text">
-                    <label for="recipe_name">Recipe Title</label>
+                    <label for="recipe_name" class="blue-text text-darken-4">Recipe Title</label>
                 </div>
-                <div class="input-field col s4">
+                <div class="input-field col s6">
                     <input id="author" name="author" type="text">
-                    <label for="author">Author</label>
+                    <label for="author" class="blue-text text-darken-4">Author</label>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s6">
-                    <select id="meal_type" name="meal_type">
-                      <option value="" disabled selected>Meal Type</option>
-                      <option value="Breakfast">Breakfast</option>
-                      <option value="Lunch">Lunch</option>
-                      <option value="Evening">Evening</option>
-                      <option value="Dessert">Dessert</option>
-                      <option value="Baking">Baking</option>
+                    <select id="meal_type" name="meal_type" class="blue-text text-darken-4">
+                      <option value="" disabled selected>MEAL TYPE</option>
+                      <option value="Breakfast" class="blue-text text-darken-4">Breakfast</option>
+                      <option value="Lunch" class="blue-text text-darken-4">Lunch</option>
+                      <option value="Evening" class="blue-text text-darken-4">Evening</option>
+                      <option value="Dessert" class="blue-text text-darken-4">Dessert</option>
+                      <option value="Baking" class="blue-text text-darken-4">Baking</option>
                     </select>
                     <label></label>
                 </div>
                 <div class="input-field col s6">
-                    <select id="difficulty" name="difficulty">
-                      <option value="" disabled selected>Cooking Difficulty</option>
-                      <option value="Easy">Easy</option>
-                      <option value="Medium">Medium</option>
-                      <option value="Hard">Hard</option>
+                    <select id="difficulty" name="difficulty" class="blue-text text-darken-4">
+                      <option value="" disabled selected>COOKING DIFFICULTY</option>
+                      <option value="Easy" class="blue-text text-darken-4">Easy</option>
+                      <option value="Medium" class="blue-text text-darken-4">Medium</option>
+                      <option value="Hard" class="blue-text text-darken-4">Hard</option>
                     </select>
                     <label></label>
                 </div>
                 <div class="row">
                     <div class="input-field label col s6">
                         <input id="prep_time" name="prep_time" type="text">
-                        <label for="prep_time">Prep Time(Minutes)</label>
+                        <label for="prep_time" class="blue-text text-darken-4">Prep Time(Minutes)</label>
                     </div>
                     <div class="input-field label col s6">
                         <input id="cooking_time" name="cooking_time" type="text">
-                        <label for="cooking_time">Cooking Time (Minutes)</label>
+                        <label for="cooking_time" class="blue-text text-darken-4">Cooking Time (Minutes)</label>
                     </div>
 
                 </div>
                 <div class="row">
                     <div class="input-field col s6">
                         <textarea id="description" name="description" class="materialize-textarea"></textarea>
-                        <label for="description">Please Insert Recipe Description</label>
+                        <label for="description" class="blue-text text-darken-4">Please Insert Recipe Description</label>
                     </div>
                     <div class="input-field col s6">
                         <textarea id="notes" name="notes" class="materialize-textarea"></textarea>
-                        <label for="notes">Please Add Any Notes</label>
+                        <label for="notes" class="blue-text text-darken-4">Please Add Any Notes</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s6">
                         <textarea id="ingredients" name="ingredients" class="materialize-textarea"></textarea>
-                        <label for="ingredients">ingredients Please</label>
+                        <label for="ingredients" class="blue-text text-darken-4">ingredients Please</label>
                     </div>
                     <div class="input-field col s6">
                         <textarea id="method" name="method" class="materialize-textarea"></textarea>
-                        <label for="method">Method</label>
+                        <label for="method" class="blue-text text-darken-4">Method</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
                         <input id="email" name="email" type="email">
-                        <label for="email">Email - (This is required so you can edit or delete your recipes)</label>
+                        <label for="email" class="blue-text text-darken-4">Email - (This is required so you can edit or delete your recipes)</label>
                     </div>
                 </div>
                 <div class="row">
