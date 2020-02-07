@@ -181,3 +181,9 @@ I decided, to change my original idea.  Originally I decided that having a diffe
 Connected the sumbit button on addrecipe.html to MongoDB
 
 Also added a few extra fields, that could be used in the future as possible search parameters.
+
+### Added Toast and Recipes.html Basic Styling
+
+Added a Toast function to the submit button, on addrecipe.html.  This is to give feedback to the user.
+
+Modified the Recipes in the recipes.html to appear in a seperate Materialize Card, will style properly later down the line after all functionality to the site is complete.
