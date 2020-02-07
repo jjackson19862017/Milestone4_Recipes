@@ -1,1 +1,109 @@
-{% extends 'base.html' %} {% block content %} {% endblock %}
+{% extends 'base.html' %} {% block content %}
+<div class="card-content">
+    <p>Please fill out the form below, to add your recipe to the collection.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="row">
+    <form action="{{ url_for('update_recipe', recipe_id=recipe._id) }}" method="POST" class="col s12">
+        <div class="row ">
+            <div class="input-field label col s6">
+                <input id="recipe_name" name="recipe_name" type="text" value="{{ recipe.recipe_name }}">
+                <label for="recipe_name" class="blue-text text-darken-4">Recipe Title</label>
+            </div>
+            <div class="input-field col s6">
+                <input id="author" name="author" type="text" value="{{ recipe.author }}">
+                <label for="author" class="blue-text text-darken-4">Author</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s5">
+                <select id="meal_type" name="meal_type" class="blue-text text-darken-4">
+                      <option value="" disabled selected>MEAL TYPE</option>
+                      {% for meal in mealtype %}
+                        {% if meal.meal_name == recipe.meal_type %}
+                      <option value="{{ meal.meal_name }}" class="blue-text text-darken-4" selected>{{ meal.meal_name }}</option>
+                        {% else %}
+                      <option value="{{ meal.meal_name }}" class="blue-text text-darken-4">{{ meal.meal_name }}</option>
+                        {% endif %}
+                      {% endfor %}
+                    </select>
+                <label></label>
+            </div>
+            <div class="input-field col s5">
+                <select id="difficulty" name="difficulty" class="blue-text text-darken-4">
+                      <option value="" disabled selected>COOKING DIFFICULTY</option>
+                      {% for diff in difficulty %}
+                        {% if diff.difficulty_name == recipe.difficulty %}
+                      <option value="{{ diff.difficulty_name }}" class="blue-text text-darken-4" selected >{{ diff.difficulty_name }}</option>
+                        {% else %}
+                      <option value="{{ diff.difficulty_name }}" class="blue-text text-darken-4">{{ diff.difficulty_name }}</option>
+                        {% endif %}
+                      {% endfor %}
+                    </select>
+                <label></label>
+            </div>
+            <div class="switch col s2">
+                <label>
+                    {% if recipe.healthy %}
+                    <input id="healthy" name="healthy" type="checkbox" checked>
+                    {% else %}
+                    <input id="healthy" name="healthy" type="checkbox">
+                    {% endif %}
+                    No
+                    
+                    <span class="lever"></span>
+                    Yes
+                    
+                </label>
+            </div>
+            <div class="row">
+                <div class="input-field label col s4">
+                    <input id="prep_time" name="prep_time" type="text" value="{{ recipe.prep_time }}">
+                    <label for="prep_time" class="blue-text text-darken-4">Prep Time(Minutes)</label>
+                </div>
+                <div class="input-field label col s4">
+                    <input id="cooking_time" name="cooking_time" type="text" value="{{ recipe.cooking_time }}">
+                    <label for="cooking_time" class="blue-text text-darken-4">Cooking Time (Minutes)</label>
+                </div>
+                <div class="input-field label col s4">
+                    <input id="serves" name="serves" type="text" value="{{ recipe.serves }}">
+                    <label for="serves" class="blue-text text-darken-4">Serves</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s6">
+                    <textarea id="description" name="description" class="materialize-textarea">{{ recipe.description }}</textarea>
+                    <label for="description" class="blue-text text-darken-4">Please Insert Recipe Description</label>
+                </div>
+                <div class="input-field col s6">
+                    <textarea id="notes" name="notes" class="materialize-textarea">{{ recipe.notes }}</textarea>
+                    <label for="notes" class="blue-text text-darken-4">Please Add Any Notes</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s6">
+                    <textarea id="ingredients" name="ingredients" class="materialize-textarea">{{ recipe.ingredients }}</textarea>
+                    <label for="ingredients" class="blue-text text-darken-4">ingredients Please</label>
+                </div>
+                <div class="input-field col s6">
+                    <textarea id="method" name="method" class="materialize-textarea">{{ recipe.method }}</textarea>
+                    <label for="method" class="blue-text text-darken-4">Method</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="email" name="email" type="email" value="{{ recipe.email }}">
+                    <label for="email" class="blue-text text-darken-4">Email - (This is required so you can edit or delete your recipes)</label>
+                </div>
+            </div>
+            <div class="row">
+                <button class="btn waves-effect waves-light submitbtn" type="submit" name="action" onclick="Materialize.toast('Recipe Edited', 10000, 'rounded')">Update Recipe
+                    <i class="material-icons right">playlist_add</i>
+                 </button>
+            </div>
+    </form>
+    </div>
+</div>
+{% endblock %}

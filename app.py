@@ -23,7 +23,9 @@ def view_recipes():
 
 @app.route('/add_recipe')
 def add_recipe():
-    return render_template("addrecipe.html", page_title="ADD RECIPE")
+    the_difficulty = mongo.db.difficulty.find()
+    the_meal_type = mongo.db.mealtype.find()
+    return render_template("addrecipe.html", difficulty = the_difficulty, mealtype = the_meal_type,  page_title="ADD RECIPE")
 
 @app.route('/insert_recipe', methods=['POST'])
 def insert_recipe():
@@ -31,6 +33,34 @@ def insert_recipe():
     recipes.insert_one(request.form.to_dict())
     return redirect(url_for('view_recipes'))
 
+@app.route('/edit_recipe/<recipe_id>')
+def edit_recipe(recipe_id):
+    the_recipe =  mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+    the_difficulty = mongo.db.difficulty.find()
+    the_meal_type = mongo.db.mealtype.find()
+    return render_template('editrecipe.html', recipe=the_recipe, difficulty = the_difficulty, mealtype = the_meal_type, page_title="EDIT RECIPE")
+
+@app.route('/update_recipe/<recipe_id>', methods=["POST"])
+def update_recipe(recipe_id):
+    recipes = mongo.db.recipes
+    recipes.update( {'_id': ObjectId(recipe_id)},
+    {
+        'recipe_name':request.form.get('recipe_name'),
+        'author':request.form.get('author'),
+        'meal_type': request.form.get('meal_type'),
+        'difficulty': request.form.get('difficulty'),
+        'healthy':request.form.get('healthy'),
+        'prep_time':request.form.get('prep_time'),
+        'cooking_time':request.form.get('cooking_time'),
+        'serves':request.form.get('serves'),
+        'description':request.form.get('description'),
+        'notes':request.form.get('notes'),
+        'ingredients':request.form.get('ingredients'),
+        'method':request.form.get('method'),
+        'email':request.form.get('email')
+
+    })
+    return redirect(url_for('view_recipes'))
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),

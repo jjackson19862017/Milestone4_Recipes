@@ -187,3 +187,9 @@ Also added a few extra fields, that could be used in the future as possible sear
 Added a Toast function to the submit button, on addrecipe.html.  This is to give feedback to the user.
 
 Modified the Recipes in the recipes.html to appear in a seperate Materialize Card, will style properly later down the line after all functionality to the site is complete.
+
+### Added Edit Recipe Function
+
+Added the Edit Recipe Function to editrecipe.html, also updated the toast to say edited instead of add.
+
+Had to modify my MongoDB, with two extra collections. Meal_Type and Difficulty, so that the for loop would work in the editrecipes file.

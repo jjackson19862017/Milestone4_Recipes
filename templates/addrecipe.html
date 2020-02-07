@@ -21,20 +21,18 @@
             <div class="input-field col s5">
                 <select id="meal_type" name="meal_type" class="blue-text text-darken-4">
                       <option value="" disabled selected>MEAL TYPE</option>
-                      <option value="Breakfast" class="blue-text text-darken-4">Breakfast</option>
-                      <option value="Lunch" class="blue-text text-darken-4">Lunch</option>
-                      <option value="Evening" class="blue-text text-darken-4">Evening</option>
-                      <option value="Dessert" class="blue-text text-darken-4">Dessert</option>
-                      <option value="Baking" class="blue-text text-darken-4">Baking</option>
+                      {% for meal in mealtype %}
+                      <option value="{{ meal.meal_name }}" class="blue-text text-darken-4">{{ meal.meal_name }}</option>
+                      {% endfor %}
                     </select>
                 <label></label>
             </div>
             <div class="input-field col s5">
                 <select id="difficulty" name="difficulty" class="blue-text text-darken-4">
                       <option value="" disabled selected>COOKING DIFFICULTY</option>
-                      <option value="Easy" class="blue-text text-darken-4">Easy</option>
-                      <option value="Medium" class="blue-text text-darken-4">Medium</option>
-                      <option value="Hard" class="blue-text text-darken-4">Hard</option>
+                      {% for diff in difficulty %}
+                      <option value="{{ diff.difficulty_name }}" class="blue-text text-darken-4">{{ diff.difficulty_name }}</option>
+                      {% endfor %}
                     </select>
                 <label></label>
             </div>
