@@ -199,3 +199,7 @@ Had to modify my MongoDB, with two extra collections. Meal_Type and Difficulty, 
 Added some comments to the html pages to make it a little easier to see what does what.
 
 Also changed the slider for healthy, into a drop down list.
+
+### Changed Side Nav
+
+I decided to make the Side Navigation Bar, more appealing to the user on mobile devices.

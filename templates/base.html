@@ -17,17 +17,38 @@
     <nav>
         <div class="nav-wrapper blue darken-4">
             <a href="{{ url_for('index') }}" class="brand-logo blue-text text-accent-1">R.E.C.I.P.E.S</a>
-            <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons blue-text text-accent-1">menu</i></a>
+            <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
                 <li><a href="{{ url_for('view_recipes') }}" class="blue-text text-accent-1"><i class="material-icons left blue-text text-accent-1">local_dining</i>View All Recipes</a></li>
                 <li><a href="#" class="blue-text text-accent-1"><i class="material-icons left blue-text text-accent-1">search</i>Search Recipes</a></li>
                 <li><a href="{{ url_for('add_recipe') }}" class="blue-text text-accent-1"><i class="material-icons left blue-text text-accent-1">add</i>Add Recipe</a></li>
             </ul>
-            <ul class="side-nav blue darken-4" id="mobile-demo">
-                <li><a href="{{ url_for('index') }}" class="blue-text text-accent-1"><i class="material-icons left blue-text text-accent-1">home</i>Home</a></li>
-                <li><a href="{{ url_for('view_recipes') }}" class="blue-text text-accent-1"><i class="material-icons left blue-text text-accent-1">local_dining</i>View All Recipes</a></li>
-                <li><a href="#" class="blue-text text-accent-1"><i class="material-icons left blue-text text-accent-1">search</i>Search Recipes</a></li>
-                <li><a href="{{ url_for('add_recipe') }}" class="blue-text text-accent-1"><i class="material-icons left blue-text text-accent-1">add</i>Add Recipe</a></li>
+            <ul id="slide-out" class="side-nav blue darken-4">
+                <li>
+                    <div class="user-view">
+                        <div class="background">
+                            <img src="{{ url_for('static', filename='images/foodcard.jpg')}}">
+                        </div>
+                        <span class="white-text name center">REFRESHING</span>
+                        <span class="white-text name center">EDIBLE</span>
+                        <span class="white-text name center">CUISINE</span>
+                        <span class="white-text name center">IN</span>
+                        <span class="white-text name center">PORTABLE</span>
+                        <span class="white-text name center">EXTERNAL</span>
+                        <span class="white-text name center">SUPPORT</span>
+                    </div>
+                </li>
+                <li><a href="{{ url_for('index') }}" class="waves-effect blue-text text-accent-1"><i class="material-icons left blue-text text-accent-1">home</i>Home</a></li>
+                <li><a href="{{ url_for('view_recipes') }}" class="waves-effect blue-text text-accent-1"><i class="material-icons left blue-text text-accent-1">local_dining</i>View All Recipes</a></li>
+                <li><a href="#" class="blue-text text-accent-1"><i class="waves-effect material-icons left blue-text text-accent-1">search</i>Search Recipes</a></li>
+                <li><a href="{{ url_for('add_recipe') }}" class="waves-effect blue-text text-accent-1"><i class="material-icons left blue-text text-accent-1">add</i>Add Recipe</a></li>
+                <li>
+                    <div class="divider"></div>
+                </li>
+
+                <li><a class="subheader white-text name center">Check out how its build at:</a></li>
+                <li><a class="blue-text text-accent-1 center" href="https://github.com/jjackson19862017">My GitHub</a></li>
+                <li><a class="blue-text text-accent-1 center" href="https://github.com/jjackson19862017/Milestone4_Recipes">Recipes Repo</a></li>
             </ul>
         </div>
     </nav>
