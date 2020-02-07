@@ -6,7 +6,7 @@
 </div>
 </div>
 <div class="row">
-    <form action="{{ url_for('add_recipe') }}" method="POST" class="col s12">
+    <form action="{{ url_for('insert_recipe') }}" method="POST" class="col s12">
         <div class="row ">
             <div class="input-field label col s6">
                 <input id="recipe_name" name="recipe_name" type="text">
@@ -18,7 +18,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="input-field col s6">
+            <div class="input-field col s5">
                 <select id="meal_type" name="meal_type" class="blue-text text-darken-4">
                       <option value="" disabled selected>MEAL TYPE</option>
                       <option value="Breakfast" class="blue-text text-darken-4">Breakfast</option>
@@ -29,7 +29,7 @@
                     </select>
                 <label></label>
             </div>
-            <div class="input-field col s6">
+            <div class="input-field col s5">
                 <select id="difficulty" name="difficulty" class="blue-text text-darken-4">
                       <option value="" disabled selected>COOKING DIFFICULTY</option>
                       <option value="Easy" class="blue-text text-darken-4">Easy</option>
@@ -38,16 +38,27 @@
                     </select>
                 <label></label>
             </div>
+            <div class="switch col s2">
+                <label>
+                  No
+                  <input id="healthy" name="healthy" type="checkbox">
+                  <span class="lever"></span>
+                  Yes
+                </label>
+            </div>
             <div class="row">
-                <div class="input-field label col s6">
+                <div class="input-field label col s4">
                     <input id="prep_time" name="prep_time" type="text">
                     <label for="prep_time" class="blue-text text-darken-4">Prep Time(Minutes)</label>
                 </div>
-                <div class="input-field label col s6">
+                <div class="input-field label col s4">
                     <input id="cooking_time" name="cooking_time" type="text">
                     <label for="cooking_time" class="blue-text text-darken-4">Cooking Time (Minutes)</label>
                 </div>
-
+                <div class="input-field label col s4">
+                    <input id="serves" name="serves" type="text">
+                    <label for="serves" class="blue-text text-darken-4">Serves</label>
+                </div>
             </div>
             <div class="row">
                 <div class="input-field col s6">

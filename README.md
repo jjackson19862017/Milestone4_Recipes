@@ -175,3 +175,9 @@ Problem was fixed.
 ### Maintaining Consistancy
 
 I decided, to change my original idea.  Originally I decided that having a different page after the index page would look nice however, I found that adding the page_title to app.py.  I could consistantly have a image at the top of each page and just have the wording change.  Personnally I don't like having a picture at the top of each page.  However from a User Experience, its more pleasing on the eye.
+
+### Added Add Recipe Functionality
+
+Connected the sumbit button on addrecipe.html to MongoDB
+
+Also added a few extra fields, that could be used in the future as possible search parameters.
