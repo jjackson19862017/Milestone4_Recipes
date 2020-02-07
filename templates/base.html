@@ -15,14 +15,17 @@
 
 <body>
     <nav>
+        <!--    Nav Bar at the top of the window     -->
         <div class="nav-wrapper blue darken-4">
             <a href="{{ url_for('index') }}" class="brand-logo blue-text text-accent-1">R.E.C.I.P.E.S</a>
             <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+            <!--    Side Loading Nav Bar Hamburger symbol   -->
             <ul id="nav-mobile" class="right hide-on-med-and-down">
                 <li><a href="{{ url_for('view_recipes') }}" class="blue-text text-accent-1"><i class="material-icons left blue-text text-accent-1">local_dining</i>View All Recipes</a></li>
                 <li><a href="#" class="blue-text text-accent-1"><i class="material-icons left blue-text text-accent-1">search</i>Search Recipes</a></li>
                 <li><a href="{{ url_for('add_recipe') }}" class="blue-text text-accent-1"><i class="material-icons left blue-text text-accent-1">add</i>Add Recipe</a></li>
             </ul>
+            <!--    Side Loading Nav Bar Main Code  -->
             <ul id="slide-out" class="side-nav blue darken-4">
                 <li>
                     <div class="user-view">
@@ -52,50 +55,58 @@
             </ul>
         </div>
     </nav>
+    <!--    Header bar for each template html    -->
     <div class="blue accent-1">
         <div class="row">
             <div class="col s12 m12">
                 <div class="card">
+                    <!--    Header Image     -->
                     <div class="card-image">
                         <img src="{{ url_for('static', filename='images/foodcard.jpg')}}">
                         <span class="card-title strong center-align">{{ page_title }}</span>
                     </div>
-                    {% block content %} {% endblock %}
+                    {% block header %} {% endblock %}
                 </div>
-                <footer class="page-footer blue darken-4">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col l6 s12">
-                                <h5 class="blue-text text-accent-1 strong">Other Information</h5>
-                                <p class="blue-text text-accent-1">This is my third project, and I am hoping to complete this in two weeks.</p>
-                            </div>
-                            <div class="col l4 offset-l2 s12">
-                                <h5 class="blue-text text-accent-1 strong">Links</h5>
-                                <ul>
-                                    <li><a class="blue-text text-accent-1" href="https://github.com/jjackson19862017">My GitHub</a></li>
-                                    <li><a class="blue-text text-accent-1" href="https://github.com/jjackson19862017/Milestone4_Recipes">Recipes Repo</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="footer-copyright">
-                        <div class="container">
-                            © 2020, your more than welcome to view my REPO.
-                        </div>
-                    </div>
-                </footer>
+            </div>
+        </div>
+    </div>
+    <div class="blue accent-1">
+        {% block content %} {% endblock %}
+    </div>
+    <footer class="page-footer blue darken-4">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="blue-text text-accent-1 strong">Other Information</h5>
+                    <p class="blue-text text-accent-1">This is my third project, and I am hoping to complete this in two weeks.</p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="blue-text text-accent-1 strong">Links</h5>
+                    <ul>
+                        <li><a class="blue-text text-accent-1" href="https://github.com/jjackson19862017">My GitHub</a></li>
+                        <li><a class="blue-text text-accent-1" href="https://github.com/jjackson19862017/Milestone4_Recipes">Recipes Repo</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                © 2020, your more than welcome to view my REPO.
+            </div>
+        </div>
+    </footer>
 
-                <!--    Import jQuery before materialize.js     -->
-                <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-                <!--    Compiled and minified JavaScript        -->
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-                <!--    Document Ready Script   -->
-                <script type="text/javascript">
-                    $(document).ready(function() {
-                        $(".button-collapse").sideNav();
-                        $('select').material_select();
-                    });
-                </script>
+    <!--    Import jQuery before materialize.js     -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <!--    Compiled and minified JavaScript        -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <!--    Document Ready Script   -->
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $(".button-collapse").sideNav();
+            $('select').material_select();
+        });
+    </script>
 </body>
 
 </html>

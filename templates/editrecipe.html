@@ -1,24 +1,26 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %} {% block header %}
+<!--    Header Text     -->
 <div class="card-content">
     <p>Please fill out the form below, to add your recipe to the collection.</p>
 </div>
-</div>
-</div>
-</div>
+{% endblock %} {% block content %}
 <!-- Creates the Form to edit a Recipe in the Collection -->
 <div class="row">
     <form action="{{ url_for('update_recipe', recipe_id=recipe._id) }}" method="POST" class="col s12">
         <div class="row ">
+            <!--Recipe Name-->
             <div class="input-field label col s6">
                 <input id="recipe_name" name="recipe_name" type="text" value="{{ recipe.recipe_name }}">
                 <label for="recipe_name" class="blue-text text-darken-4">Recipe Title</label>
             </div>
+            <!--Recipe Author-->
             <div class="input-field col s6">
                 <input id="author" name="author" type="text" value="{{ recipe.author }}">
                 <label for="author" class="blue-text text-darken-4">Author</label>
             </div>
         </div>
         <div class="row">
+            <!--Meal Type -->
             <div class="input-field col s5">
                 <select id="meal_type" name="meal_type" class="blue-text text-darken-4">
                       <option value="" disabled selected>MEAL TYPE</option>
@@ -32,6 +34,7 @@
                     </select>
                 <label></label>
             </div>
+            <!--Cooking Difficulty-->
             <div class="input-field col s5">
                 <select id="difficulty" name="difficulty" class="blue-text text-darken-4">
                       <option value="" disabled selected>COOKING DIFFICULTY</option>
@@ -45,6 +48,7 @@
                     </select>
                 <label></label>
             </div>
+            <!--Is it Healthy-->
             <div class="input-field col s2">
                 <select id="healthy" name="healthy" class="blue-text text-darken-4">
                       <option value="" disabled selected>IS IT HEALTHY</option>
@@ -60,46 +64,55 @@
             </div>
 
             <div class="row">
+                <!--Prep Time-->
                 <div class="input-field label col s4">
                     <input id="prep_time" name="prep_time" type="text" value="{{ recipe.prep_time }}">
                     <label for="prep_time" class="blue-text text-darken-4">Prep Time(Minutes)</label>
                 </div>
+                <!--Cooking Time-->
                 <div class="input-field label col s4">
                     <input id="cooking_time" name="cooking_time" type="text" value="{{ recipe.cooking_time }}">
                     <label for="cooking_time" class="blue-text text-darken-4">Cooking Time (Minutes)</label>
                 </div>
+                <!--Serves-->
                 <div class="input-field label col s4">
                     <input id="serves" name="serves" type="text" value="{{ recipe.serves }}">
                     <label for="serves" class="blue-text text-darken-4">Serves</label>
                 </div>
             </div>
             <div class="row">
+                <!--Recipe Description-->
                 <div class="input-field col s6">
                     <textarea id="description" name="description" class="materialize-textarea">{{ recipe.description }}</textarea>
                     <label for="description" class="blue-text text-darken-4">Please Insert Recipe Description</label>
                 </div>
+                <!--Recipe Notes-->
                 <div class="input-field col s6">
                     <textarea id="notes" name="notes" class="materialize-textarea">{{ recipe.notes }}</textarea>
                     <label for="notes" class="blue-text text-darken-4">Please Add Any Notes</label>
                 </div>
             </div>
             <div class="row">
+                <!--Recipe Ingredients-->
                 <div class="input-field col s6">
                     <textarea id="ingredients" name="ingredients" class="materialize-textarea">{{ recipe.ingredients }}</textarea>
                     <label for="ingredients" class="blue-text text-darken-4">ingredients Please</label>
                 </div>
+                <!--Recipe Method-->
                 <div class="input-field col s6">
                     <textarea id="method" name="method" class="materialize-textarea">{{ recipe.method }}</textarea>
                     <label for="method" class="blue-text text-darken-4">Method</label>
                 </div>
             </div>
             <div class="row">
+                <!--User Email Address-->
                 <div class="input-field col s12">
                     <input id="email" name="email" type="email" value="{{ recipe.email }}">
                     <label for="email" class="blue-text text-darken-4">Email - (This is required so you can edit or delete your recipes)</label>
                 </div>
             </div>
             <div class="row">
+                <!--Recipe Submit Button-->
                 <button class="btn waves-effect waves-light submitbtn" type="submit" name="action" onclick="Materialize.toast('Recipe Edited', 10000, 'rounded')">Update Recipe
                     <i class="material-icons right">playlist_add</i>
                  </button>

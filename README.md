@@ -203,3 +203,13 @@ Also changed the slider for healthy, into a drop down list.
 ### Changed Side Nav
 
 I decided to make the Side Navigation Bar, more appealing to the user on mobile devices.
+
+### Added Code Comments, Block Header
+
+I started by trying to enable the user to upload an image to the MongoDB.  I researched it using Youtube, however after two hours of trying it wouldn't work.  It looks like the image in the form field wasn't being put into the recipes collection.
+
+I tried to research the issue on slack, and found out that in deploying to heroku this is something that isn't supported.
+
+So I have added comments to my html's instead.
+
+I have also introduced a Header Block to clean up my code instead of relying on one Content Block
