@@ -213,3 +213,9 @@ I tried to research the issue on slack, and found out that in deploying to herok
 So I have added comments to my html's instead.
 
 I have also introduced a Header Block to clean up my code instead of relying on one Content Block
+
+### Added Delete Recipe Function
+
+Added Delete Recipe Function to recipes.html and app.py.
+
+I will add a function to validate user in the future.
