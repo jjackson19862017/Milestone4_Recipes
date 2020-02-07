@@ -10,7 +10,6 @@ if path.exists("env.py"):
 app = Flask(__name__)
 app.config["MONGO_DBNAME"] = 'cookbook' # Insert Database Name
 app.config["MONGO_URI"] = os.getenv("MONGODB_URI") # Insert Database URI from MongoDB
-
 mongo = PyMongo(app)
 
 @app.route('/')
@@ -19,7 +18,8 @@ def index():
 
 @app.route('/view_recipes')
 def view_recipes():
-    return render_template("recipes.html", recipes = mongo.db.recipes.find())
+    recipes=mongo.db.recipes.find()
+    return render_template("recipes.html", recipes=recipes)
 
 @app.route('/add_recipe')
 def add_recipe():
