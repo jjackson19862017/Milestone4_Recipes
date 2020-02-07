@@ -164,3 +164,14 @@ I have put together a form that can take input, from a user.  I haven't setup th
 ### Add Recipe Form Styling
 
 I changed the default colours, to something that would match my colour theme.
+
+## Friday 7th Feburary 2020,
+
+### Fixed Mongo Reading Error
+
+The Mongo Collection Recipes was failing to show in the recipes.html, after finding the problem in the beginning For Loop.  
+Problem was fixed.
+
+### Maintaining Consistancy
+
+I decided, to change my original idea.  Originally I decided that having a different page after the index page would look nice however, I found that adding the page_title to app.py.  I could consistantly have a image at the top of each page and just have the wording change.  Personnally I don't like having a picture at the top of each page.  However from a User Experience, its more pleasing on the eye.
