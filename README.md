@@ -193,3 +193,9 @@ Modified the Recipes in the recipes.html to appear in a seperate Materialize Car
 Added the Edit Recipe Function to editrecipe.html, also updated the toast to say edited instead of add.
 
 Had to modify my MongoDB, with two extra collections. Meal_Type and Difficulty, so that the for loop would work in the editrecipes file.
+
+### Added Comments to HTML code
+
+Added some comments to the html pages to make it a little easier to see what does what.
+
+Also changed the slider for healthy, into a drop down list.

@@ -5,6 +5,7 @@
 </div>
 </div>
 </div>
+<!-- Creates the Form to edit a Recipe in the Collection -->
 <div class="row">
     <form action="{{ url_for('update_recipe', recipe_id=recipe._id) }}" method="POST" class="col s12">
         <div class="row ">
@@ -44,20 +45,20 @@
                     </select>
                 <label></label>
             </div>
-            <div class="switch col s2">
-                <label>
-                    {% if recipe.healthy %}
-                    <input id="healthy" name="healthy" type="checkbox" checked>
-                    {% else %}
-                    <input id="healthy" name="healthy" type="checkbox">
-                    {% endif %}
-                    No
-                    
-                    <span class="lever"></span>
-                    Yes
-                    
-                </label>
+            <div class="input-field col s2">
+                <select id="healthy" name="healthy" class="blue-text text-darken-4">
+                      <option value="" disabled selected>IS IT HEALTHY</option>
+                      {% for heal in healthy %}
+                      {% if heal.healthy_name == recipe.healthy %}
+                      <option value="{{ heal.healthy_name }}" class="blue-text text-darken-4" selected>{{ heal.healthy_name }}</option>
+                      {% else %}
+                      <option value="{{ heal.healthy_name }}" class="blue-text text-darken-4">{{ heal.healthy_name }}</option>
+                      {% endif %}
+                      {% endfor %}
+                    </select>
+                <label></label>
             </div>
+
             <div class="row">
                 <div class="input-field label col s4">
                     <input id="prep_time" name="prep_time" type="text" value="{{ recipe.prep_time }}">

@@ -9,25 +9,24 @@
 </div>
 </div>
 </div>
+<!-- Creates the Card for each Recipe Item in the Collection -->
 {% for recipe in recipes %}
-
 <div class="col s12">
     <div class="card blue darken-4">
         <div class="card-content white-text">
 
-            <span class="card-title">{{ recipe.recipe_name }}</span>
+            <span class="card-title">{{ recipe.recipe_name.capitalize() }}</span>
             <p>{{ recipe.description }}</p>
-
-            <p>This is a {{ recipe.meal_type }} recipe.</p>
-            <p>This is {{ recipe.difficulty }}</p>
-            <p>Is this a healthy dish? {{ recipe.healthy }}</p>
+            <p>This is a {{ recipe.meal_type.capitalize() }} recipe.</p>
+            <p>This is an {{ recipe.difficulty.capitalize() }} recipe to make.</p>
+            <p>Healthy: {{ recipe.healthy.capitalize() }}</p>
             <p>Serves: {{ recipe.serves }}</p>
-            <p>This will take {{ recipe.prep_time }} minutes to prep</p>
-            <p>This will take {{ recipe.cooking_time }} minutes to cook</p>
+            <p>This will take {{ recipe.prep_time }} minutes to prep.</p>
+            <p>This will take {{ recipe.cooking_time }} minutes to cook.</p>
             <p>Ingredients: {{ recipe.ingredients }}</p>
             <p>Method: {{ recipe.method }}</p>
             <p>Notes: {{ recipe.notes }}</p>
-            <p>Author: {{ recipe.author }}</p>
+            <p>Author: {{ recipe.author.capitalize() }}</p>
         </div>
 
         <div class="card-action">

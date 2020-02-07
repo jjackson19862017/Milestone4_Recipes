@@ -25,7 +25,8 @@ def view_recipes():
 def add_recipe():
     the_difficulty = mongo.db.difficulty.find()
     the_meal_type = mongo.db.mealtype.find()
-    return render_template("addrecipe.html", difficulty = the_difficulty, mealtype = the_meal_type,  page_title="ADD RECIPE")
+    the_healthy = mongo.db.healthy.find()
+    return render_template("addrecipe.html", difficulty = the_difficulty, mealtype = the_meal_type,healthy=the_healthy,  page_title="ADD RECIPE")
 
 @app.route('/insert_recipe', methods=['POST'])
 def insert_recipe():
@@ -38,7 +39,8 @@ def edit_recipe(recipe_id):
     the_recipe =  mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     the_difficulty = mongo.db.difficulty.find()
     the_meal_type = mongo.db.mealtype.find()
-    return render_template('editrecipe.html', recipe=the_recipe, difficulty = the_difficulty, mealtype = the_meal_type, page_title="EDIT RECIPE")
+    the_healthy = mongo.db.healthy.find()
+    return render_template('editrecipe.html', recipe=the_recipe, difficulty = the_difficulty, mealtype = the_meal_type, healthy=the_healthy,page_title="EDIT RECIPE")
 
 @app.route('/update_recipe/<recipe_id>', methods=["POST"])
 def update_recipe(recipe_id):
