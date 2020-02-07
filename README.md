@@ -219,3 +219,7 @@ I have also introduced a Header Block to clean up my code instead of relying on 
 Added Delete Recipe Function to recipes.html and app.py.
 
 I will add a function to validate user in the future.
+
+### Changed Nav Title and removed Hello from index.html
+
+Quick change
