@@ -259,3 +259,7 @@ Added a recipe without an image, for the purpose of seeing if a default image ca
 
 ### Result
 The default image works, I then edited it so that the actual Curry Picture was shown.
+
+### Changed Recipe Cards
+
+Changed it to an horizontal card style from an action reveal card.
