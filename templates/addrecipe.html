@@ -20,8 +20,15 @@
             </div>
         </div>
         <div class="row">
+            <!--Recipe Image-->
+            <div class="input-field col s6">
+                <input id="recipe_image" name="recipe_image" type="text" value="{{ url_for('static', filename='images/imgplaceholder.jpg')}}">
+                <label for="recipe_image" class="blue-text text-darken-4">Image Address</label>
+            </div>
+        </div>
+        <div class="row">
             <!--Meal Type -->
-            <div class="input-field col s5">
+            <div class="input-field col s4">
                 <select id="meal_type" name="meal_type" class="blue-text text-darken-4">
                       <option value="" disabled selected>MEAL TYPE</option>
                       {% for meal in mealtype %}
@@ -31,7 +38,7 @@
                 <label></label>
             </div>
             <!--Cooking Difficulty-->
-            <div class="input-field col s5">
+            <div class="input-field col s4">
                 <select id="difficulty" name="difficulty" class="blue-text text-darken-4">
                       <option value="" disabled selected>COOKING DIFFICULTY</option>
                       {% for diff in difficulty %}
@@ -41,7 +48,7 @@
                 <label></label>
             </div>
             <!--Is it Healthy-->
-            <div class="input-field col s2">
+            <div class="input-field col s4">
                 <select id="healthy" name="healthy" class="blue-text text-darken-4">
                       <option value="" disabled selected>IS IT HEALTHY</option>
                       {% for heal in healthy %}

@@ -38,6 +38,20 @@ In this section, you should mention all of the languages, frameworks, libraries,
 - [JQuery](https://jquery.com)
     - The project uses **JQuery** to simplify DOM manipulation.
 
+| Technology      | How it was used           | Website           |
+| :--------------:|-----------|-----------:|
+| HTML            | Backbone of everything |             |
+| CSS / MATERLIZE | Styling & A modern responsive front-end framework based on Material Design      |
+| JAVASCRIPT      | are neat      |
+| PYTHON          | are neat      |
+| PYMONGO         | are neat      |
+| MONGO           | are neat      |
+| FLASK           | are neat      |
+| HEROKU          | are neat      |
+| GITHUB          | are neat      |
+| GITPOD          | are neat      |
+| VSCODE          | are neat      |
+
 
 ## Testing
 
@@ -223,3 +237,25 @@ I will add a function to validate user in the future.
 ### Changed Nav Title and removed Hello from index.html
 
 Quick change
+
+
+## Saturday 8th Feburary 2020,
+
+### Added Recipe Image Field, and updated recipes.html
+
+Added recipe_image to the
+- recipes.html
+- addrecipe.html
+- editrecipe.html
+
+Also added a default image to the addrecipe.html just incase other people dont have an image for the recipes they are adding.
+
+Also updated recipes.html recipe cards.
+
+#### First User Test
+
+### Purpose
+Added a recipe without an image, for the purpose of seeing if a default image can be shown.
+
+### Result
+The default image works, I then edited it so that the actual Curry Picture was shown.

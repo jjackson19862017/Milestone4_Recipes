@@ -26,7 +26,7 @@ def add_recipe():
     the_difficulty = mongo.db.difficulty.find()
     the_meal_type = mongo.db.mealtype.find()
     the_healthy = mongo.db.healthy.find()
-    return render_template("addrecipe.html", difficulty = the_difficulty, mealtype = the_meal_type,healthy=the_healthy,  page_title="ADD RECIPE")
+    return render_template("addrecipe.html", difficulty = the_difficulty, mealtype = the_meal_type, healthy=the_healthy,  page_title="ADD RECIPE")
 
 @app.route('/insert_recipe', methods=['POST'])
 def insert_recipe():
@@ -49,6 +49,7 @@ def update_recipe(recipe_id):
     {
         'recipe_name':request.form.get('recipe_name'),
         'author':request.form.get('author'),
+        'recipe_image':request.form.get('recipe_image'),
         'meal_type': request.form.get('meal_type'),
         'difficulty': request.form.get('difficulty'),
         'healthy':request.form.get('healthy'),
