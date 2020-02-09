@@ -12,15 +12,21 @@ app.config["MONGO_DBNAME"] = 'cookbook' # Insert Database Name
 app.config["MONGO_URI"] = os.getenv("MONGODB_URI") # Insert Database URI from MongoDB
 mongo = PyMongo(app)
 
+""" Welcome Page """
 @app.route('/')
 def index():
     return render_template("index.html", page_title="REFRESHING EDIBLE CUISINE IN PORTABLE EXTERNAL SUPPORT")
 
+
+""" Recipes Page that displays all recipes """
 @app.route('/view_recipes')
 def view_recipes():
-    recipes=mongo.db.recipes.find()
+    """ Sorts by Meal_type in ascending order """
+    recipes=mongo.db.recipes.find().sort([('meal_type', 1)]) 
     return render_template("recipes.html", recipes=recipes, page_title="RECIPE COLLECTION")
 
+
+""" Page that allows you to add Recipes """
 @app.route('/add_recipe')
 def add_recipe():
     the_difficulty = mongo.db.difficulty.find()
@@ -28,12 +34,7 @@ def add_recipe():
     the_healthy = mongo.db.healthy.find()
     return render_template("addrecipe.html", difficulty = the_difficulty, mealtype = the_meal_type, healthy=the_healthy,  page_title="ADD RECIPE")
 
-@app.route('/insert_recipe', methods=['POST'])
-def insert_recipe():
-    recipes = mongo.db.recipes
-    recipes.insert_one(request.form.to_dict())
-    return redirect(url_for('view_recipes'))
-
+""" Page that allows you to edit Recipes """
 @app.route('/edit_recipe/<recipe_id>')
 def edit_recipe(recipe_id):
     the_recipe =  mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
@@ -42,6 +43,7 @@ def edit_recipe(recipe_id):
     the_healthy = mongo.db.healthy.find()
     return render_template('editrecipe.html', recipe=the_recipe, difficulty = the_difficulty, mealtype = the_meal_type, healthy=the_healthy,page_title="EDIT RECIPE")
 
+""" Function that updates a recipe after being edited """
 @app.route('/update_recipe/<recipe_id>', methods=["POST"])
 def update_recipe(recipe_id):
     recipes = mongo.db.recipes
@@ -65,6 +67,8 @@ def update_recipe(recipe_id):
     })
     return redirect(url_for('view_recipes'))
 
+
+""" Page that deletes recipes """
 @app.route('/delete_recipe/<recipe_id>')
 def delete_recipe(recipe_id):
     mongo.db.recipes.remove({'_id': ObjectId(recipe_id)})

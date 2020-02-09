@@ -1,5 +1,5 @@
 # Refreshing Edible Cuisine In Portable External Support
-      R         E       C     I     P       E       S  
+ 
 
 [Deployment on Heroku](https://ms4recipes.herokuapp.com/)
 
@@ -38,19 +38,20 @@ In this section, you should mention all of the languages, frameworks, libraries,
 - [JQuery](https://jquery.com)
     - The project uses **JQuery** to simplify DOM manipulation.
 
-| Technology      | How it was used           | Website           |
-| :--------------:|-----------|-----------:|
-| HTML            | Backbone of everything |             |
-| CSS / MATERLIZE | Styling & A modern responsive front-end framework based on Material Design      |
-| JAVASCRIPT      | are neat      |
-| PYTHON          | are neat      |
-| PYMONGO         | are neat      |
-| MONGO           | are neat      |
-| FLASK           | are neat      |
-| HEROKU          | are neat      |
-| GITHUB          | are neat      |
-| GITPOD          | are neat      |
-| VSCODE          | are neat      |
+| Technology      | How it was used                                                 | Website                                            |
+| :--------------:|-----------------------------------------------------------------|---------------------------------------------------:|
+| HTML            | Backbone of everything                                          | https://www.w3schools.com/html/default.asp         |
+| CSS             | Styling for the MATERLIZE to work on                            | https://www.w3schools.com/css/default.asp          |
+| MATERLIZE       | A modern responsive front-end framework based on Material Design| https://materializecss.com/                        |
+| JAVASCRIPT      | Used for some functionality on the website                      | https://www.w3schools.com/js/default.asp           |
+| PYTHON          | Used for the main functionality on the website                  | https://www.w3schools.com/python/default.asp       |
+| PYMONGO         | Interaction for Python and Mongo                                | https://www.w3schools.com/python/python.asp        |
+| MONGO           | Non-Relational Database                                         | https://cloudmongo.com                             |
+| FLASK           | Microframework                                                  | https://en.wikipedia.org/wiki/Flask_(web_framework)|
+| HEROKU          | Cloud Platform to Host the Flask App                            | https://id.heroku.com/login                        |
+| GITHUB          | Stores my work so that other people and myself can reference it | https://www.github.com                             |
+| GITPOD          | An IDE allowing me to code on any browser                       | https://www.gitpod.io                              |
+| VSCODE          | An IDE allowing me to code on my computer                       | https://code.visualstudio.com/                     |
 
 
 ## Testing
@@ -92,6 +93,8 @@ In addition, if it is not obvious, you should also describe how to run your code
 
 ### Media
 The main image used is from https://www.forksoverknives.com/plant-based-primer-beginners-guide-starting-plant-based-diet/#gs.w27a6h
+
+The images and recipes that I used were from the https://www.bbcgoodfood.com/
 
 ### Acknowledgements
 
@@ -263,3 +266,17 @@ The default image works, I then edited it so that the actual Curry Picture was s
 ### Changed Recipe Cards
 
 Changed it to an horizontal card style from an action reveal card.
+
+
+## Sunday 9th Feburary 2020,
+
+### Updated App.py
+
+Added comments to app.py, to make decorators easier to understand there function.
+
+Also removed the 'insert_recipe' decorator as this is no longer required.  This was originally added as I was watching the original code institute videos for building a task_manager and that was involved in the steps.
+
+On the website itself I used the add recipe function to insert a few recipes, so that I could work on the search function.
+This could be seen as a second test to make sure different 'meal_types', 'difficultys' were working as should do.
+
+Updated Readme file.
