@@ -14,16 +14,17 @@ mongo = PyMongo(app)
 
 """ Welcome Page """
 @app.route('/')
-def index():
-    return render_template("index.html", page_title="REFRESHING EDIBLE CUISINE IN PORTABLE EXTERNAL SUPPORT")
-
-
-""" Recipes Page that displays all recipes """
-@app.route('/view_recipes')
 def view_recipes():
     """ Sorts by Meal_type in ascending order """
     recipes=mongo.db.recipes.find().sort([('meal_type', 1)]) 
-    return render_template("recipes.html", recipes=recipes, page_title="RECIPE COLLECTION")
+    return render_template("index.html", recipes=recipes, page_title="RECIPE COLLECTION")
+
+#""" Recipes Page that displays all recipes """
+#@app.route('/view_recipes')
+#def view_recipes():
+#    """ Sorts by Meal_type in ascending order """
+#    recipes=mongo.db.recipes.find().sort([('meal_type', 1)]) 
+#    return render_template("recipes.html", recipes=recipes, page_title="RECIPE COLLECTION")
 
 
 """ Page that allows you to add Recipes """

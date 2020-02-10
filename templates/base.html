@@ -17,7 +17,7 @@
     <nav>
         <!--    Nav Bar at the top of the window     -->
         <div class="nav-wrapper blue darken-4">
-            <a href="{{ url_for('index') }}" class="brand-logo blue-text text-accent-1">R E C I P E S</a>
+            <a href="{{ url_for('view_recipes') }}" class="brand-logo blue-text text-accent-1">R E C I P E S</a>
             <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
             <!--    Side Loading Nav Bar Hamburger symbol   -->
             <ul id="nav-mobile" class="right hide-on-med-and-down">
@@ -41,8 +41,8 @@
                         <span class="white-text name center">SUPPORT</span>
                     </div>
                 </li>
-                <li><a href="{{ url_for('index') }}" class="waves-effect blue-text text-accent-1"><i class="material-icons left blue-text text-accent-1">home</i>Home</a></li>
-                <li><a href="{{ url_for('view_recipes') }}" class="waves-effect blue-text text-accent-1"><i class="material-icons left blue-text text-accent-1">local_dining</i>View All Recipes</a></li>
+                <li><a href="{{ url_for('view_recipes') }}" class="waves-effect blue-text text-accent-1"><i class="material-icons left blue-text text-accent-1">home</i>Home</a></li>
+                <li><a href="#" class="waves-effect blue-text text-accent-1"><i class="material-icons left blue-text text-accent-1">local_dining</i>View All Recipes</a></li>
                 <li><a href="#" class="blue-text text-accent-1"><i class="waves-effect material-icons left blue-text text-accent-1">search</i>Search Recipes</a></li>
                 <li><a href="{{ url_for('add_recipe') }}" class="waves-effect blue-text text-accent-1"><i class="material-icons left blue-text text-accent-1">add</i>Add Recipe</a></li>
                 <li>

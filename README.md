@@ -280,3 +280,11 @@ On the website itself I used the add recipe function to insert a few recipes, so
 This could be seen as a second test to make sure different 'meal_types', 'difficultys' were working as should do.
 
 Updated Readme file.
+
+## Monday 10th Feburary 2020,
+
+### Updated index.html
+
+I have moved the recipes.html to index.html so I can get rid of the recipes.html and change it to a recipe_details.html.  I have changed the app.py to reflect this.
+
+The purpose of this is to show people the most viewed recipes, and then they can either click on them, or search for them.  This will then send them to a more detailed page.

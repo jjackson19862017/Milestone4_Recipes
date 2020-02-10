@@ -20,4 +20,38 @@
     <a href="{{ url_for('add_recipe') }}" class="blue-text text-darken-4">Add Recipe</a>
 </div>
 
-{% endblock %} {% block content %} {% endblock %}
+{% endblock %} {% block content %}
+<!-- Creates the Card for each Recipe Item in the Collection -->
+{% for recipe in recipes %}
+<div class="container">
+    <div class="row">
+        <div class="col s12 m12">
+            <h2 class="header"></h2>
+            <div class="card horizontal small">
+                <div class="card-image">
+                    <img src="{{ recipe.recipe_image }}">
+                </div>
+                <div class="card-stacked">
+                    <div class="card-content">
+                        <h4>{{ recipe.recipe_name.capitalize() }} - {{ recipe.views }} Views</h4>
+                        <p>{{ recipe.description }}</p>
+                        <p>This is a {{ recipe.meal_type.capitalize() }} recipe.</p>
+                        <p>This is an {{ recipe.difficulty.capitalize() }} recipe to make.</p>
+                        <p>Healthy: {{ recipe.healthy.capitalize() }}</p>
+                        <p>Serves: {{ recipe.serves }}</p>
+                        <p>This will take {{ recipe.prep_time }} minutes to prep.</p>
+                        <p>This will take {{ recipe.cooking_time }} minutes to cook.</p>
+                        <p>Ingredients: {{ recipe.ingredients }}</p>
+                        <p>Method: {{ recipe.method }}</p>
+                        <p>Notes: {{ recipe.notes }}</p>
+                        <p>Author: {{ recipe.author.capitalize() }}</p>
+                    </div>
+                    <div class="card-action">
+                        <a href="{{url_for('edit_recipe', recipe_id=recipe._id)}}">EDIT RECIPE</a>
+                        <a href="{{url_for('delete_recipe', recipe_id=recipe._id)}}">REMOVE RECIPE</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>{% endfor %}{% endblock %}
