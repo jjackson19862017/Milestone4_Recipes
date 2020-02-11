@@ -1,7 +1,9 @@
 {% extends 'base.html' %} {% block header %}
 <!--    Header Text     -->
-<div class="card-content">
-    <p>Please fill out the form below, to add your recipe to the collection.</p>
+<div class="card blue darken-4 no_margin">
+    <div class="card-content white-text">
+        <p>Please fill out the form below, to update your recipe to the collection.</p>
+    </div>
 </div>
 {% endblock %} {% block content %}
 <!-- Creates the Form to edit a Recipe in the Collection -->
@@ -10,7 +12,7 @@
         <div class="row ">
             <!--Recipe Name-->
             <div class="input-field label col s6">
-                <input id="recipe_name" name="recipe_name" type="text" value="{{ recipe.recipe_name }}">
+                <input id="recipe_name" name="recipe_name" type="text" value="{{ recipe.recipe_name }}" data-length="24">
                 <label for="recipe_name" class="blue-text text-darken-4">Recipe Title</label>
             </div>
             <!--Recipe Author-->
@@ -22,7 +24,7 @@
         <div class="row">
             <!--Recipe Image-->
             <div class="input-field col s6">
-                <input id="recipe_image" name="recipe_image" type="text" value="{{ recipe.image }}">
+                <input id="recipe_image" name="recipe_image" type="text" value="{{ recipe.recipe_image }}">
                 <label for="recipe_image" class="blue-text text-darken-4">Image Address</label>
             </div>
         </div>

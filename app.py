@@ -16,7 +16,7 @@ mongo = PyMongo(app)
 @app.route('/')
 def view_recipes():
     """ Sorts by Meal_type in ascending order """
-    recipes=mongo.db.recipes.find().sort([('meal_type', 1)]) 
+    recipes=mongo.db.recipes.find().sort([('views', -1)]).limit(6)
     return render_template("index.html", recipes=recipes, page_title="RECIPE COLLECTION")
 
 #""" Recipes Page that displays all recipes """
@@ -34,6 +34,13 @@ def add_recipe():
     the_meal_type = mongo.db.mealtype.find()
     the_healthy = mongo.db.healthy.find()
     return render_template("addrecipe.html", difficulty = the_difficulty, mealtype = the_meal_type, healthy=the_healthy,  page_title="ADD RECIPE")
+
+""" Sends the New Recipe to Mongo """
+@app.route('/insert_recipe', methods=['POST'])
+def insert_recipe():
+    recipes = mongo.db.recipes
+    recipes.insert_one(request.form.to_dict())
+    return redirect(url_for('view_recipes'))
 
 """ Page that allows you to edit Recipes """
 @app.route('/edit_recipe/<recipe_id>')

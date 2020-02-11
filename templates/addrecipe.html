@@ -1,16 +1,17 @@
 {% extends 'base.html' %} {% block header %}
 <!--    Header Text     -->
-<div class="card-content">
-    <p>Please fill out the form below, to add your recipe to the collection.</p>
+<div class="card blue darken-4 no_margin">
+    <div class="card-content white-text">
+        <p>Please fill out the form below, to add your recipe to the collection.</p>
+    </div>
 </div>
-
 <!-- Creates the Form to add a new Recipe into the Collection -->
 <div class="row">
     <form action="{{ url_for('insert_recipe') }}" method="POST" class="col s12">
         <div class="row ">
             <!--Recipe Name-->
             <div class="input-field label col s6">
-                <input id="recipe_name" name="recipe_name" type="text">
+                <input id="recipe_name" name="recipe_name" type="text" data-length="24">
                 <label for="recipe_name" class="blue-text text-darken-4">Recipe Title</label>
             </div>
             <!--Recipe Author-->

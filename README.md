@@ -285,6 +285,18 @@ Updated Readme file.
 
 ### Updated index.html
 
-I have moved the recipes.html to index.html so I can get rid of the recipes.html and change it to a recipe_details.html.  I have changed the app.py to reflect this.
+I have moved the recipes.html to index.html so I can get rid of the recipes.html and change it to a detailsrecipe.html.  I have changed the app.py to reflect this.
 
 The purpose of this is to show people the most viewed recipes, and then they can either click on them, or search for them.  This will then send them to a more detailed page.
+
+## Tuesday 11th Feburary 2020,
+
+### Improved Index.html Appearance to User
+
+I have been experimenting with what I liked the best.
+
+The problem was that the paragraphs I had used under the CARD IMAGE or HEADER for each page wasn't showing the full text.  So in the end I just seperated the CARD IMAGE and created a BASIC CARD.
+
+I have added custom CSS code, modified the base.html and all the other pages in regards to the HEADER BLOCK.
+
+I also re inserted the 'insert_recipe' decorator as the 'addrecipe.html' wouldn't load

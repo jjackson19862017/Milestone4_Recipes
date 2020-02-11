@@ -1,57 +1,47 @@
 {% extends 'base.html' %} {% block header %}
 <!--    Header Text     -->
-<div class="card-content">
-    <p>Welcome to Refreshing Edible Cuisine In Portable External Support</p>
-    <br>
-    <p>(RECIPES for short) this is a place where people can come together as a community.</p>
-    <br>
-    <p> You can share recipes and ideas with one another.</p>
-    <br>
-    <p>So if you want to start browsing either click below or on the Navigation Bar. Once you have gone to the Recipes Page, you may Add, Edit or Delete your recipes.</p>
-    <p>If you just want to search for Recipes, you can by clicking on "Search Recipes"</p>
-</div>
-<div class="card-action">
-    <a href="{{ url_for('view_recipes') }}" class="blue-text text-darken-4">View All Recipes</a>
-</div>
-<div class="card-action">
-    <a href="#" class="blue-text text-darken-4">Search Recipes</a>
-</div>
-<div class="card-action">
-    <a href="{{ url_for('add_recipe') }}" class="blue-text text-darken-4">Add Recipe</a>
+<div class="card blue darken-4 no_margin">
+    <div class="card-content white-text">
+        <p>Welcome to Refreshing Edible Cuisine In Portable External Support</p>
+        <br>
+        <p>(RECIPES for short) this is a place where people can come together as a community.</p>
+        <br>
+        <p> You can share recipes and ideas with one another.</p>
+        <br>
+        <p>So if you want to start browsing either click below or on the Navigation Bar.</p>
+        <br>
+        <p>Here are the top six dishes.</p>
+    </div>
+    <div class="card-action">
+        <a href="#" class="blue-text text-accent-1">Search Recipes</a>
+        <a href="{{ url_for('add_recipe') }}" class="blue-text text-accent-1">Add Recipe</a>
+    </div>
 </div>
 
 {% endblock %} {% block content %}
 <!-- Creates the Card for each Recipe Item in the Collection -->
-{% for recipe in recipes %}
-<div class="container">
-    <div class="row">
-        <div class="col s12 m12">
-            <h2 class="header"></h2>
-            <div class="card horizontal small">
-                <div class="card-image">
-                    <img src="{{ recipe.recipe_image }}">
-                </div>
-                <div class="card-stacked">
-                    <div class="card-content">
-                        <h4>{{ recipe.recipe_name.capitalize() }} - {{ recipe.views }} Views</h4>
-                        <p>{{ recipe.description }}</p>
-                        <p>This is a {{ recipe.meal_type.capitalize() }} recipe.</p>
-                        <p>This is an {{ recipe.difficulty.capitalize() }} recipe to make.</p>
-                        <p>Healthy: {{ recipe.healthy.capitalize() }}</p>
-                        <p>Serves: {{ recipe.serves }}</p>
-                        <p>This will take {{ recipe.prep_time }} minutes to prep.</p>
-                        <p>This will take {{ recipe.cooking_time }} minutes to cook.</p>
-                        <p>Ingredients: {{ recipe.ingredients }}</p>
-                        <p>Method: {{ recipe.method }}</p>
-                        <p>Notes: {{ recipe.notes }}</p>
-                        <p>Author: {{ recipe.author.capitalize() }}</p>
-                    </div>
-                    <div class="card-action">
-                        <a href="{{url_for('edit_recipe', recipe_id=recipe._id)}}">EDIT RECIPE</a>
-                        <a href="{{url_for('delete_recipe', recipe_id=recipe._id)}}">REMOVE RECIPE</a>
-                    </div>
-                </div>
+
+
+
+<div class="row">
+    {% for recipe in recipes %}
+    <div class="col s12 m6 l4">
+        <div class="card medium">
+            <div class="card-image">
+                <img src="{{ recipe.recipe_image }}" alt="">
+                <span class="card-title blue_title_card">{{ recipe.recipe_name }}</span>
+            </div>
+            <div class="card-content">
+
+                <p>{{ recipe.description }}</p>
+            </div>
+            <div class="card-action">
+                <a href="{{ url_for('view_recipes', recipe_id=recipe._id) }}">View</a>
+                <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}">Edit</a>
+                <span class="new badge blue darken-4" data-badge-caption="Views">{{ recipe.views }}</span>
             </div>
         </div>
     </div>
-</div>{% endfor %}{% endblock %}
+    {% endfor %}
+</div>
+{% endblock %}
