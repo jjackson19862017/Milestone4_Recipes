@@ -300,3 +300,7 @@ The problem was that the paragraphs I had used under the CARD IMAGE or HEADER fo
 I have added custom CSS code, modified the base.html and all the other pages in regards to the HEADER BLOCK.
 
 I also re inserted the 'insert_recipe' decorator as the 'addrecipe.html' wouldn't load
+
+### Customizing AddRecipe and EditRecipe Form
+
+I have added CSS Styles and Validation and Limits to the AddRecipe and EditRecipe Forms

@@ -11,12 +11,12 @@
     <form action="{{ url_for('update_recipe', recipe_id=recipe._id) }}" method="POST" class="col s12">
         <div class="row ">
             <!--Recipe Name-->
-            <div class="input-field label col s6">
-                <input id="recipe_name" name="recipe_name" type="text" value="{{ recipe.recipe_name }}" data-length="24">
+            <div class="input-field label col s12">
+                <input id="recipe_name" name="recipe_name" type="text" value="{{ recipe.recipe_name }}" data-length="24" maxlength="24">
                 <label for="recipe_name" class="blue-text text-darken-4">Recipe Title</label>
             </div>
             <!--Recipe Author-->
-            <div class="input-field col s6">
+            <div class="input-field col s12">
                 <input id="author" name="author" type="text" value="{{ recipe.author }}">
                 <label for="author" class="blue-text text-darken-4">Author</label>
             </div>
@@ -75,24 +75,24 @@
             <div class="row">
                 <!--Prep Time-->
                 <div class="input-field label col s4">
-                    <input id="prep_time" name="prep_time" type="text" value="{{ recipe.prep_time }}">
+                    <input id="prep_time" name="prep_time" type="number" min="0" max="120" step="1" value="{{ recipe.prep_time }}">
                     <label for="prep_time" class="blue-text text-darken-4">Prep Time(Minutes)</label>
                 </div>
                 <!--Cooking Time-->
                 <div class="input-field label col s4">
-                    <input id="cooking_time" name="cooking_time" type="text" value="{{ recipe.cooking_time }}">
+                    <input id="cooking_time" name="cooking_time" type="number" min="0" max="999" step="1" value="{{ recipe.cooking_time }}">
                     <label for="cooking_time" class="blue-text text-darken-4">Cooking Time (Minutes)</label>
                 </div>
                 <!--Serves-->
                 <div class="input-field label col s4">
-                    <input id="serves" name="serves" type="text" value="{{ recipe.serves }}">
+                    <input id="serves" name="serves" min="1" max="120" step="1" value="{{ recipe.serves }}">
                     <label for="serves" class="blue-text text-darken-4">Serves</label>
                 </div>
             </div>
             <div class="row">
                 <!--Recipe Description-->
                 <div class="input-field col s6">
-                    <textarea id="description" name="description" class="materialize-textarea">{{ recipe.description }}</textarea>
+                    <textarea id="description" name="description" class="materialize-textarea" data-length="110" maxlength="110">{{ recipe.description }}</textarea>
                     <label for="description" class="blue-text text-darken-4">Please Insert Recipe Description</label>
                 </div>
                 <!--Recipe Notes-->
