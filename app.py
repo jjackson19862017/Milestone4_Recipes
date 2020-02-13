@@ -16,16 +16,8 @@ mongo = PyMongo(app)
 @app.route('/')
 def view_recipes():
     """ Sorts by Meal_type in ascending order """
-    recipes=mongo.db.recipes.find().sort([('views', -1)]).limit(6)
+    recipes=mongo.db.recipes.find().sort([('views', -1)])
     return render_template("index.html", recipes=recipes, page_title="RECIPE COLLECTION")
-
-#""" Recipes Page that displays all recipes """
-#@app.route('/view_recipes')
-#def view_recipes():
-#    """ Sorts by Meal_type in ascending order """
-#    recipes=mongo.db.recipes.find().sort([('meal_type', 1)]) 
-#    return render_template("recipes.html", recipes=recipes, page_title="RECIPE COLLECTION")
-
 
 """ Page that allows you to add Recipes """
 @app.route('/add_recipe')
@@ -38,12 +30,25 @@ def add_recipe():
 """ Sends the New Recipe to Mongo """
 @app.route('/insert_recipe', methods=['POST'])
 def insert_recipe():
-    if request.method == 'POST':
-        new_recipe = request.form.to_dict()
-        ingredients = new_recipe.get('ingredients')
-        print(ingredients)
-    recipes = mongo.db.recipes
-    recipes.insert_one(request.form.to_dict())
+    recipes=mongo.db.recipes
+    recipes.insert_one({
+
+        'recipe_name':request.form.get('recipe_name'),
+        'author':request.form.get('author'),
+        'recipe_image':request.form.get('recipe_image'),
+        'meal_type': request.form.get('meal_type'),
+        'difficulty': request.form.get('difficulty'),
+        'healthy':request.form.get('healthy'),
+        'prep_time':request.form.get('prep_time'),
+        'cooking_time':request.form.get('cooking_time'),
+        'serves':request.form.get('serves'),
+        'description':request.form.get('description'),
+        'notes':request.form.get('notes'),
+        'ingredients':request.form.get('ingredients'),
+        'method':request.form.get('method'),
+        'email':request.form.get('email'),
+        'views':0
+    })
 
     return redirect(url_for('view_recipes'))
 
@@ -92,7 +97,11 @@ def delete_recipe(recipe_id):
 @app.route('/view_recipe_details/<recipe_id>')
 def view_recipe_details(recipe_id):
     recipes = mongo.db.recipes
-    the_recipe =  recipes.find_one({"_id": ObjectId(recipe_id)})
+    recipes.find_one_and_update(
+        {'_id': ObjectId(recipe_id)},
+        {'$inc': {'views': 1}}
+    )
+    the_recipe = mongo.db.recipes.find_one({'_id': ObjectId(recipe_id)})
     return render_template('detailsrecipe.html', recipe=the_recipe,page_title="RECIPE DETAILS")
 
 

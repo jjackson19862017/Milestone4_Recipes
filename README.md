@@ -310,3 +310,13 @@ I have added CSS Styles and Validation and Limits to the AddRecipe and EditRecip
 ### Listing Ingredients
 
 I have now made the Ingredients store as a visit in Mongo
+
+### Made Recipes Details Page
+
+Made the Recipes Details Page.
+
+Also had to update the 'editrecipe.html' as the 'views' field wasn't there so when I updated a recipe, the views would reset to NULL.
+
+Also when a Recipe Details is viewed then the views would increase by 1.
+
+Changed in app.py, how the form gets stored so that I could add the views field in as an interger and I wouldnt have to hide it on an HTML Form.

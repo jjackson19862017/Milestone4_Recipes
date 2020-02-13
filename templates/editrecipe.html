@@ -121,6 +121,12 @@
                 </div>
             </div>
             <div class="row">
+                <!--Hidden Views Information-->
+                <div class="input-field col s12">
+                    <input type="hidden" id="views" name="views" value="{{recipe.views}}">
+                </div>
+            </div>
+            <div class="row">
                 <!--Recipe Submit Button-->
                 <button class="btn waves-effect waves-light submitbtn" type="submit" name="action" onclick="Materialize.toast('Recipe Edited', 10000, 'rounded')">Update Recipe
                     <i class="material-icons right">playlist_add</i>
