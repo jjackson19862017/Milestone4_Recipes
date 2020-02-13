@@ -320,3 +320,7 @@ Also had to update the 'editrecipe.html' as the 'views' field wasn't there so wh
 Also when a Recipe Details is viewed then the views would increase by 1.
 
 Changed in app.py, how the form gets stored so that I could add the views field in as an interger and I wouldnt have to hide it on an HTML Form.
+
+### Added Search Functionality
+
+Added a search bar into the base.html so that people can search to see if any recipes can be found.

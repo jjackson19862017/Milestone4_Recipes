@@ -17,13 +17,22 @@
     <nav>
         <!--    Nav Bar at the top of the window     -->
         <div class="nav-wrapper blue darken-4">
-            <a href="{{ url_for('view_recipes') }}" class="brand-logo blue-text text-accent-1">R E C I P E S</a>
             <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
-            <!--    Side Loading Nav Bar Hamburger symbol   -->
+            <a href="{{ url_for('view_recipes') }}" class="brand-logo blue-text text-accent-1">R E C I P E S</a>
+
             <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="{{ url_for('view_recipes') }}" class="blue-text text-accent-1"><i class="material-icons left blue-text text-accent-1">local_dining</i>View All Recipes</a></li>
+                <form action="{{ url_for('find_recipes') }}" method="POST">
+                    <div class="input-field search-bar">
+                        <input id="search_field" type="search" required="" name="search_field">
+                        <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                        <i class="material-icons">close</i>
+                    </div>
+                    <button class="btn submit_btn" type="submit">Go Find Recipes</button>
+                </form>
+                <!--<li><a href="{{ url_for('view_recipes') }}" class="blue-text text-accent-1"><i class="material-icons left blue-text text-accent-1">local_dining</i>View All Recipes</a></li>
                 <li><a href="#" class="blue-text text-accent-1"><i class="material-icons left blue-text text-accent-1">search</i>Search Recipes</a></li>
                 <li><a href="{{ url_for('add_recipe') }}" class="blue-text text-accent-1"><i class="material-icons left blue-text text-accent-1">add</i>Add Recipe</a></li>
+                -->
             </ul>
             <!--    Side Loading Nav Bar Main Code  -->
             <ul id="slide-out" class="side-nav blue darken-4">
@@ -54,9 +63,10 @@
                 <li><a class="blue-text text-accent-1 center" href="https://github.com/jjackson19862017/Milestone4_Recipes">Recipes Repo</a></li>
             </ul>
         </div>
+
     </nav>
     <!--    Header bar for each template html    -->
-    <div class="row card">
+    <div class="row card medium">
         <div class="card-image">
             <img src="{{ url_for('static', filename='images/foodcard.jpg')}}">
             <span class="card-title blue_title_card">{{ page_title }}</span>
@@ -65,8 +75,10 @@
     </div>
     </div>
     </div>
-    <div class="blue accent-1 container">
-        {% block content %} {% endblock %}
+    <div class="row">
+        <div class="blue accent-1 container">
+            {% block content %} {% endblock %}
+        </div>
     </div>
     <footer class="page-footer blue darken-4">
         <div class="container">
@@ -101,6 +113,7 @@
             $(".button-collapse").sideNav();
             $('select').material_select();
             $('input#input_text, textarea#textarea1').characterCounter();
+            $(".dropdown-button").dropdown();
         });
     </script>
 </body>

@@ -2,45 +2,35 @@
 <!--    Header Text     -->
 <div class="card blue darken-4 no_margin">
     <div class="card-content white-text">
-        <p>Welcome to Refreshing Edible Cuisine In Portable External Support</p>
-        <br>
-        <p>(RECIPES for short) this is a place where people can come together as a community.</p>
-        <br>
-        <p> You can share recipes and ideas with one another.</p>
-        <br>
-        <p>So if you want to start browsing either click below or on the Navigation Bar.</p>
-        <br>
-        <p>Here are the top six dishes.</p>
-    </div>
-    <div class="card-action">
-        <a href="#" class="blue-text text-accent-1">Search Recipes</a>
-        <a href="{{ url_for('add_recipe') }}" class="blue-text text-accent-1">Add Recipe</a>
-    </div>
-</div>
-
-{% endblock %} {% block content %}
-<!-- Creates the Card for each Recipe Item in the Collection -->
-
-
-
-<div class="row">
-    {% for recipe in recipes %}
-    <div class="col s12 m6 l4">
-        <div class="card medium">
-            <div class="card-image">
-                <img src="{{ recipe.recipe_image }}" alt="">
-                <span class="card-title blue_title_card">{{ recipe.recipe_name }}</span>
-            </div>
-            <div class="card-content center">
-
-                <p>{{ recipe.description }}</p>
-            </div>
-            <div class="card-action">
-                <a href="{{ url_for('view_recipe_details', recipe_id=recipe._id) }}">View</a>
-                <span class="new badge blue darken-4" data-badge-caption="Views">{{ recipe.views }}</span>
-            </div>
+        <div class="col s12 m6">
+            <p>Welcome to Refreshing Edible Cuisine In Portable External Support</p>
+            <p>(RECIPES for short) this is a place where people can come together as a community.</p>
+            <p> You can share recipes and ideas with one another.</p>
+            <p>So if you want to start browsing either click below or on the Navigation Bar.</p>
+            <p>Here are the top six dishes.</p>
         </div>
     </div>
-    {% endfor %}
-</div>
-{% endblock %}
+
+    {% endblock %} {% block content %}
+    <!-- Creates the Card for each Recipe Item in the Collection -->
+    <div class="row">
+        {% for recipe in recipes %}
+        <div class="col s12 m6 l4">
+            <div class="card medium">
+                <div class="card-image">
+                    <img src="{{ recipe.recipe_image }}" alt="">
+                    <span class="card-title blue_title_card">{{ recipe.recipe_name }}</span>
+                </div>
+                <div class="card-content center">
+
+                    <p>{{ recipe.description }}</p>
+                </div>
+                <div class="card-action">
+                    <a href="{{ url_for('view_recipe_details', recipe_id=recipe._id) }}">View</a>
+                    <span class="new badge blue darken-4" data-badge-caption="Views">{{ recipe.views }}</span>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% endblock %}
