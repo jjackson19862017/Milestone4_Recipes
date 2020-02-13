@@ -304,3 +304,9 @@ I also re inserted the 'insert_recipe' decorator as the 'addrecipe.html' wouldn'
 ### Customizing AddRecipe and EditRecipe Form
 
 I have added CSS Styles and Validation and Limits to the AddRecipe and EditRecipe Forms
+
+## Thursday 13th Feburary 2020,
+
+### Listing Ingredients
+
+I have now made the Ingredients store as a visit in Mongo

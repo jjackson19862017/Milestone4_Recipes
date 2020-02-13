@@ -38,8 +38,13 @@ def add_recipe():
 """ Sends the New Recipe to Mongo """
 @app.route('/insert_recipe', methods=['POST'])
 def insert_recipe():
+    if request.method == 'POST':
+        new_recipe = request.form.to_dict()
+        ingredients = new_recipe.get('ingredients')
+        print(ingredients)
     recipes = mongo.db.recipes
     recipes.insert_one(request.form.to_dict())
+
     return redirect(url_for('view_recipes'))
 
 """ Page that allows you to edit Recipes """
@@ -70,7 +75,8 @@ def update_recipe(recipe_id):
         'notes':request.form.get('notes'),
         'ingredients':request.form.get('ingredients'),
         'method':request.form.get('method'),
-        'email':request.form.get('email')
+        'email':request.form.get('email'),
+        'views':request.form.get('views')
 
     })
     return redirect(url_for('view_recipes'))
@@ -81,6 +87,13 @@ def update_recipe(recipe_id):
 def delete_recipe(recipe_id):
     mongo.db.recipes.remove({'_id': ObjectId(recipe_id)})
     return redirect(url_for('view_recipes'))
+
+""" Page that allows you to see the Recipe in Detail """
+@app.route('/view_recipe_details/<recipe_id>')
+def view_recipe_details(recipe_id):
+    recipes = mongo.db.recipes
+    the_recipe =  recipes.find_one({"_id": ObjectId(recipe_id)})
+    return render_template('detailsrecipe.html', recipe=the_recipe,page_title="RECIPE DETAILS")
 
 
 if __name__ == '__main__':
