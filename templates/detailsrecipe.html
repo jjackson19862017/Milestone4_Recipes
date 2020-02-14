@@ -14,12 +14,8 @@
 
 {% endblock %} {% block content %}
 <!-- Creates the Card for each Recipe Item in the Collection -->
-
-
 <div class="container">
-
     <h4 class="rnd_blue_title_card">{{ recipe.recipe_name.upper()}}</h4>
-
     <div class="row">
         <div class="col s12 m5">
             <h4 class="rnd_blue_title_card">Serves: {{recipe.serves}}</h4>
@@ -44,15 +40,27 @@
             <textarea class="details_textbox_field">{{recipe.method}}</textarea>
         </div>
     </div>
-    <div>
-        <p class="rnd_blue_title_card">Submitted by {{recipe.author}}</p>
+    <div class="row">
+        <div class="col s12">
+            <p class="rnd_blue_title_card">Submitted by {{recipe.author}}</p>
+        </div>
     </div>
-
-
-</div>
-
-<div class="card-action">
-    <a href="{{url_for('edit_recipe', recipe_id=recipe._id)}}">EDIT RECIPE</a>
-    <a href="{{url_for('delete_recipe', recipe_id=recipe._id)}}">REMOVE RECIPE</a>
-</div>
+    <div class="row">
+        <div class="row white_input_field">
+            <!--User Email Address-->
+            <div class="input-field col s12 ">
+                <input id="confirmemail" name="confirmemail" type="email">
+                <label for="confirmemail" class="blue-text text-darken-4">Enter your Email to Confirm that you can Edit or Delete this Recipe.</label>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s12 m6">
+            <a href="{{url_for('edit_recipe', recipe_id=recipe._id)}}" class="waves-effect waves-light btn-large submitbtn full_width"><i class="material-icons left">edit</i>EDIT RECIPE</a>
+        </div>
+        <div class="col s12 m6">
+            <a href="{{url_for('delete_recipe', recipe_id=recipe._id)}}" class="waves-effect waves-light btn-large submitbtn full_width"><i class="material-icons left">delete</i>DELETE RECIPE</a>
+        </div>
+        </form>
+    </div>
 </div>{% endblock %}

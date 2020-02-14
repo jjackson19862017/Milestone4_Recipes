@@ -332,3 +332,7 @@ Trying to make everything come together and try different outcomes for better Us
 ### Changed Recipe Details Page
 
 Nearly completed changing Details Page, just need to put the Recipe Protection in that allows only the creator to edit or delete the Recipes.
+
+## Friday 14th February 2020,
+
+Tried to setup the email input validation, so that it would check to see if your email would match up with the email stored, unfortunately need to work it out.  As its not as easy as i first thought

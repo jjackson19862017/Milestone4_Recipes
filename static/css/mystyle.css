@@ -137,3 +137,7 @@ body {
 p {
     font-size: 16px;
 }
+
+.full_width {
+    width: 100%;
+}
