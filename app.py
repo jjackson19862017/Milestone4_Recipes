@@ -17,7 +17,11 @@ mongo = PyMongo(app)
 def view_recipes():
     """ Sorts by Meal_type in ascending order """
     recipes=mongo.db.recipes.find().sort([('views', -1)])
-    return render_template("index.html", recipes=recipes, page_title="RECIPE COLLECTION")
+    
+
+    """ Adding Functionality to Search Dropdown Menu """
+    listDiff = list(mongo.db.difficulty.find())
+    return render_template("index.html", recipes=recipes, listDifficulty = listDiff, page_title="RECIPE COLLECTION")
 
 """ Page that allows you to add Recipes """
 @app.route('/add_recipe')
@@ -107,22 +111,26 @@ def view_recipe_details(recipe_id):
 """Search Mongo for Recipes"""
 @app.route('/find_recipes', methods=['GET', 'POST'])
 def find_recipes():
-    if request.method=='POST':
-        
+    if request.method=='POST':        
         # get the search term
         search_field = request.form.get("search_field")
-        
         #  create the index
         mongo.db.recipes.create_index( [("$**", 'text')] )
-        
          # search with the search term that came through the form
         cursor = mongo.db.recipes.find({ "$text": { "$search": search_field } })
         recipes = [recipe for recipe in cursor]
-        
         # send recipes to page
         return render_template('searchrecipes.html', recipes=recipes, query=search_field)
-        
     return render_template('searchrecipes.html')
+
+@app.route('/find_recipes')
+def search_recipes():
+    mycol=mongo.db.recipes
+    myquery={'difficulty':'Easy'}
+    query = mycol.find(myquery)
+    recipes = [recipe for recipe in myquery]
+    print(myquery)
+    return render_template('searchrecipes.html',recipes=recipes, query="Easy")
 
 
 if __name__ == '__main__':

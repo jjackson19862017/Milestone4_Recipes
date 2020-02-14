@@ -324,3 +324,7 @@ Changed in app.py, how the form gets stored so that I could add the views field 
 ### Added Search Functionality
 
 Added a search bar into the base.html so that people can search to see if any recipes can be found.
+
+### Changing Appearance of NavBar, Recipe Details
+
+Trying to make everything come together and try different outcomes for better User Experience

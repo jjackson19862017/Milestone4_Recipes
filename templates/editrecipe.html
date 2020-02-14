@@ -34,7 +34,7 @@
                 <select id="meal_type" name="meal_type" class="blue-text text-darken-4">
                       <option value="" disabled selected>MEAL TYPE</option>
                       {% for meal in mealtype %}
-                        {% if meal.meal_name == recipe.meal_type %}
+                        {% if meal.mealtype == recipe.meal_type %}
                       <option value="{{ meal.meal_name }}" class="blue-text text-darken-4" selected>{{ meal.meal_name }}</option>
                         {% else %}
                       <option value="{{ meal.meal_name }}" class="blue-text text-darken-4">{{ meal.meal_name }}</option>

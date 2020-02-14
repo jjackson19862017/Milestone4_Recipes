@@ -2,6 +2,10 @@ body {
     background-color: #82B1FF;
 }
 
+* {
+    box-sizing: border-box;
+}
+
 
 /* label color */
 
@@ -117,4 +121,14 @@ body {
 
 .no_margin {
     margin: 0 !important;
+}
+
+.sml_border {
+    border: 5px solid #0D47A1 !important;
+}
+
+.img_details {
+    width: 20vw;
+    border: 4px solid #0D47A1 !important;
+    border-radius: 25px;
 }
