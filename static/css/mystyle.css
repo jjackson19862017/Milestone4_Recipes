@@ -141,3 +141,15 @@ p {
 .full_width {
     width: 100%;
 }
+
+.my_banner {
+    display: block;
+    border-radius: 2px 2px 0 0;
+    position: relative;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 250px;
+}

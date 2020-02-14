@@ -342,3 +342,7 @@ Tried to setup the email input validation, so that it would check to see if your
 ### Changed Add and Edit Recipe Pages/Forms
 
 I made them look more like the Recipe Details page for consitancy.
+
+### Clickable Recipe Cards
+
+Made Recipe Cards clickable, this was on feedback saying that most people expect them to be.
