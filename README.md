@@ -335,4 +335,10 @@ Nearly completed changing Details Page, just need to put the Recipe Protection i
 
 ## Friday 14th February 2020,
 
-Tried to setup the email input validation, so that it would check to see if your email would match up with the email stored, unfortunately need to work it out.  As its not as easy as i first thought
+### Updated Buttons at bottom of recipe details
+
+Tried to setup the email input validation, so that it would check to see if your email would match up with the email stored, unfortunately need to work it out.  As its not as easy as i first thought.
+
+### Changed Add and Edit Recipe Pages/Forms
+
+I made them look more like the Recipe Details page for consitancy.
