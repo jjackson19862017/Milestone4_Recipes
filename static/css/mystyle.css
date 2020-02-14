@@ -108,15 +108,16 @@ body {
     height: 105px !important;
 }
 
-.white_textbox_field {
-    padding: 2px !important;
-    border: 4px solid #0D47A1 !important;
+.details_textbox_field {
     width: 100%;
-    background-color: white;
-    border-radius: 25px;
-    text-align: center;
-    text-transform: capitalize;
-    height: 150px !important;
+    height: 500px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 0px solid #ccc;
+    border-radius: 4px;
+    background-color: transparent;
+    font-size: 16px;
+    resize: none;
 }
 
 .no_margin {
@@ -128,7 +129,11 @@ body {
 }
 
 .img_details {
-    width: 20vw;
+    width: 100%;
     border: 4px solid #0D47A1 !important;
     border-radius: 25px;
+}
+
+p {
+    font-size: 16px;
 }

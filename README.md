@@ -328,3 +328,7 @@ Added a search bar into the base.html so that people can search to see if any re
 ### Changing Appearance of NavBar, Recipe Details
 
 Trying to make everything come together and try different outcomes for better User Experience
+
+### Changed Recipe Details Page
+
+Nearly completed changing Details Page, just need to put the Recipe Protection in that allows only the creator to edit or delete the Recipes.

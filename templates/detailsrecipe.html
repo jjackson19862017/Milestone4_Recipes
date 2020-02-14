@@ -18,62 +18,41 @@
 
 <div class="container">
 
-    <div class="container">
-        <h4>{{ recipe.recipe_name}}</h4>
+    <h4 class="rnd_blue_title_card">{{ recipe.recipe_name.upper()}}</h4>
 
-        <div class="row">
-            <div class="col s12 m4">
-                <p>Views: {{recipe.views}}</p>
-                <img class="img_details" src="{{recipe.recipe_image}}">
-                <h5>{{recipe.description}}</h5>
-            </div>
-            <div class="col s12 m8">
-                <h4>Ingredients</h4>
-                <span>{{recipe.ingredients}}</span>
+    <div class="row">
+        <div class="col s12 m5">
+            <h4 class="rnd_blue_title_card">Serves: {{recipe.serves}}</h4>
+            <img class="img_details" src="{{recipe.recipe_image}}">
 
-            </div>
         </div>
-        <div class="row">
-            <h4>Method</h4>
-            <textarea>{{recipe.method}}</textarea>
+        <div class="col s12 m7">
+            <h4 class="rnd_blue_title_card">Description</h4>
+            <span>{{recipe.description}}</span>
+            <p class="rnd_blue_title_card">Difficulty: {{recipe.difficulty}}</p>
+            <p class="rnd_blue_title_card">Preperation Time: {{recipe.prep_time}} minutes</p>
+            <p class="rnd_blue_title_card">Cooking Time: {{recipe.cooking_time}} minutes</p>
         </div>
-        <div>
-            <p>Submitted by {{recipe.author}}</p>
+    </div>
+    <div class="row">
+        <div class="col s12 m6">
+            <h4 class="rnd_blue_title_card">Ingredients</h4>
+            <textarea class="details_textbox_field">{{recipe.ingredients}}</textarea>
         </div>
+        <div class="col s12 m6">
+            <h4 class="rnd_blue_title_card">Method</h4>
+            <textarea class="details_textbox_field">{{recipe.method}}</textarea>
+        </div>
+    </div>
+    <div>
+        <p class="rnd_blue_title_card">Submitted by {{recipe.author}}</p>
     </div>
 
 
 </div>
 
-<div class="container">
-    <div class="row">
-        <div class="col s12 m12">
-            <h2 class="header rnd_blue_title_card">{{ recipe.recipe_name.upper() }}</h2>
-            <div class="card large">
-                <div class="card-image">
-                    <img src="{{ recipe.recipe_image }}">
-                </div>
-                <div class="card-stacked">
-                    <div class="card-content">
-                        <p>{{ recipe.description }}</p>
-                        <p>This is a {{ recipe.meal_type.capitalize() }} recipe.</p>
-                        <p>This is an {{ recipe.difficulty.capitalize() }} recipe to make.</p>
-                        <p>Healthy: {{ recipe.healthy.capitalize() }}</p>
-                        <p>Serves: {{ recipe.serves }}</p>
-                        <p>This will take {{ recipe.prep_time }} minutes to prep.</p>
-                        <p>This will take {{ recipe.cooking_time }} minutes to cook.</p>
-                        <textarea>Ingredients: {{ recipe.ingredients }}</textarea>
-                        <textarea>Method: {{ recipe.method }}</textarea>
-                        <p>Notes: {{ recipe.notes }}</p>
-                        <p>Author: {{ recipe.author.capitalize() }}</p>
-                        <p>Views: {{ recipe.views }}</p>
-                    </div>
-                    <div class="card-action">
-                        <a href="{{url_for('edit_recipe', recipe_id=recipe._id)}}">EDIT RECIPE</a>
-                        <a href="{{url_for('delete_recipe', recipe_id=recipe._id)}}">REMOVE RECIPE</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+<div class="card-action">
+    <a href="{{url_for('edit_recipe', recipe_id=recipe._id)}}">EDIT RECIPE</a>
+    <a href="{{url_for('delete_recipe', recipe_id=recipe._id)}}">REMOVE RECIPE</a>
+</div>
 </div>{% endblock %}
