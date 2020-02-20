@@ -3,40 +3,69 @@
 
 [Deployment on Heroku](https://ms4recipes.herokuapp.com/)
 
-I plan to design and build, a forum of information that Users can contribute and share with the wider community.  I plan to use the information learnt in Flask, Python and using MongoDB
+I plan to design and build, a collection of information that Users can contribute and share with the wider community.  I plan to use the information learnt in Flask, Python and using MongoDB.
 
 I also plan to try and promote Cooking Tools.
  
 ## UX
- 
-Use this section to provide insight into your UX process, focusing on who this website is for, what it is that they want to achieve and how your project is the best way to help them achieve these things.
 
-In particular, as part of this section we recommend that you provide a list of User Stories, with the following general structure:
-- As a user type, I want to perform an action, so that I can achieve a goal.
+I want to create something that is consistant, but is easily browseable.  I plan to have a central page, that links to other features.
 
-This section is also where you would share links to any wireframes, mockups, diagrams etc. that you created as part of the design process. These files should themselves either be included as a pdf file in the project itself (in an separate directory), or just hosted elsewhere online and can be in any format that is viewable inside the browser.
+It would need to provide the following features:-
+
+1. Somewhere to View all the recipes in the collection
+2. Somewhere to Add Recipes
+3. A Search feature
+4. Someway for a User to Edit or Delete their own Recipes
+
+Following on from the previous lessons, I have continued to use Materlize.  This should speed up the creating side of things.
+
+### Users Stories
+
+| User      | Story                                                                         |
+| :--------:|-------------------------------------------------------------------------------|
+| FIRST     | I want to be able to Search for different recipes, that are in the collection.|
+| SECOND    | I want to be able to add my own recipes.                                      |
+| THIRD     | I want to be able to edit and remove my own recipes.                          |
+
+Deployment Diagram - 
+
+![alt text](/static/images/deploymentdiagram.png "Deployment Diagram")
+
+Index Wireframe - 
+
+![alt text](/static/images/indexwireframe.png "Index Wireframe")
+
+This is what I started with and then I just changed it to suit what my ability was.
 
 ## Features
 
-In this section, you should go over the different parts of your project, and describe each in a sentence or so.
- 
+The website, allows you to browse on a Desktop, Tablet or Mobile Device with various changes in the way the website appears.  Ie the Navbar shrinks when on smaller devices.  There is a central picture so that it appears on each screen, to bring consistency to the User so they arnt surprised by anything.  Below the image there is the Title of the Page.
+
+The content below each title will change according to the other pages.  However the look of the content will be consistant using CSS.
+
+On the Index Page,
+There is a feature to let the user search for a recipe, then below that there is a feature to allow the user to login and edit their own recipes.
+
+Below the search and login elements there are recipe cards for people to browse.
+
+At the bottom of the page, is the Footer where some information is there about myself. 
+
+
 ### Existing Features
-- Feature 1 - allows users X to achieve Y, by having them fill out Z
-- ...
+On the Index page is a list of all the recipes are displayed in order of how many views each recipe has had.
 
-For some/all of your features, you may choose to reference the specific project files that implement them, although this is entirely optional.
-
-In addition, you may also use this section to discuss plans for additional features to be implemented in the future:
+Each recipe can be clicked on to view the full recipe as a single recipe. 
 
 ### Features Left to Implement
-- Another feature idea
+- Better search feature, instead of searching everything in the Collection
+- Auto complete in the Search feature to make it more user friendly
+- Quick searches IE Easy, Medium, Hard or by Breakfast, Lunch, Evening, Dessert, Baking
+- The more recipes there are the longer it would take to load, so maybe add some form of pagination.  This is to limit what is seen and used on resources by the system.
 
 ## Technologies Used
 
 In this section, you should mention all of the languages, frameworks, libraries, and any other tools that you have used to construct this project. For each, provide its name, a link to its official site and a short sentence of why it was used.
-
-- [JQuery](https://jquery.com)
-    - The project uses **JQuery** to simplify DOM manipulation.
 
 | Technology      | How it was used                                                 | Website                                            |
 | :--------------:|-----------------------------------------------------------------|---------------------------------------------------:|
@@ -52,44 +81,131 @@ In this section, you should mention all of the languages, frameworks, libraries,
 | GITHUB          | Stores my work so that other people and myself can reference it | https://www.github.com                             |
 | GITPOD          | An IDE allowing me to code on any browser                       | https://www.gitpod.io                              |
 | VSCODE          | An IDE allowing me to code on my computer                       | https://code.visualstudio.com/                     |
+| SLACK           | An chat application to allow others to communicate              | https://slack.com/intl/en-gb/                      |
+
+
+Recipe Table in Mongo
+
+| Field        | Type       | Properties - All are Required                                         |
+| :-----------:|------------|----------------------------------------------------------------------:|
+| recipe_name  | Autonumber | Unique                                                                |
+| author       | String     |                                                                       |
+| recipe_image | String     | Has to be a string as an image cannot be stored when using Heroku     |
+| meal_type    | String     | Gets the values from a mealtype table                                 |
+| difficulty   | String     | Gets the values from a difficulty table                               |
+| healthy      | String     |                                                                       |
+| prep_time    | Integer    |                                                                       |
+| cooking_time | Integer    |                                                                       |
+| serves       | Integer    |                                                                       |
+| description  | String     |                                                                       |
+| notes        | String     |                                                                       |
+| ingredients  | String     |                                                                       |
+| method       | String     |                                                                       |
+| email        | String     |                                                                       |
+| views        | Integer    | Cannot be edited by User                                              |
 
 
 ## Testing
 
-In this section, you need to convince the assessor that you have conducted enough testing to legitimately believe that the site works well. Essentially, in this part you will want to go over all of your user stories from the UX section and ensure that they all work as intended, with the project providing an easy and straightforward way for the users to achieve their goals.
+#### Test
 
-Whenever it is feasible, prefer to automate your tests, and if you've done so, provide a brief explanation of your approach, link to the test file(s) and explain how to run them.
+### Purpose
+Added a recipe without an image, for the purpose of seeing if a default image can be shown.
+### Result
+The default image works, I then edited it so that the actual Curry Picture was shown.
 
-For any scenarios that have not been automated, test the user stories manually and provide as much detail as is relevant. A particularly useful form for describing your testing process is via scenarios, such as:
+***
 
-1. Contact form:
-    1. Go to the "Contact Us" page
-    2. Try to submit the empty form and verify that an error message about the required fields appears
-    3. Try to submit the form with an invalid email address and verify that a relevant error message appears
-    4. Try to submit the form with all inputs valid and verify that a success message appears.
+##### Purpose
+To see if a users email would match up with the email stored in their recipe.
+##### Method
+Typed in jjackson19862017@gmail.com in the search field on the detailsrecipe.html
+##### Outcome
+Fails
+##### Fix
+Researching into PyMongo website and Slack.
 
-In addition, you should mention in this section how your project looks and works on different browsers and screen sizes.
+***
 
-You should also mention in this section any interesting bugs or problems you discovered during your testing, even if you haven't addressed them yet.
+##### Purpose
+To see if a user could click on a recipe card instead of just the 'view' link.
+##### Method
+Clicked on the image of the recipe
+##### Outcome
+Went to details of the recipe - Expected
 
-If this section grows too long, you may want to split it off into a separate file and link to it from here.
+***
+
+##### Purpose
+To see if a user could search for their recipes
+##### Method
+Typed in jjackson19862017@gmail.com in the search field on the index.html
+##### Outcome
+It finds everything - Not Expected
+##### Fix
+I have now changed the find feature in the App.py, it now finds if the email address is there.
+
+***
+
+##### Purpose
+To see if a user could search for their recipes
+##### Method
+Typed in jjackson19862017@gmail.com in the search field on the index.html
+##### Outcome
+Took me to the usersrecipe.html - Expected
+
+***
+
+##### Purpose
+To see if a user could delete their recipes
+##### Method
+Clicked on "Delete Recipe"
+##### Outcome
+Error - Previously I tried to have an if statement with the condition, if the two emails matched then it would delete the recipe.
+##### Fix
+However I changed the way I was checking and so I just replaced this with my original delete code using Github History.
+
+#### Device Testing
+
+The site works on the following devices:
+- Huawei P20 Pro running Chrome
+- 13" Macbook Pro
+- Pixel 2 (Emulated using Chrome Dev Tools)
+- iPhone X (Emulated using Chrome Dev Tools)
+- iPad (Emulated using Chrome Dev Tools)
+- iPad Pro (Emulated using Chrome Dev Tools)
+
+The site works in the following broswers:
+- Chrome
+- Firefox
+- Safari
+
+#### Code Testing
+
+- HTML - This was attempted using https://validator.w3.org/, however because of the Flask language it couldnt understand that the HTML works.
+
+- CSS - This was attempted using https://jigsaw.w3.org/css-validator/validator, however it gave out errors for the code provided my Materlize for customising its forms.
+
+It also threw some warnings for my CSS, because of repeat values.
 
 ## Deployment
 
-This section should describe the process you went through to deploy the project to a hosting platform (e.g. GitHub Pages or Heroku).
+The application was started on GITPOD. I then found out how to customise my VSCode Application so that I could code on my MacBook without the internet.
 
-In particular, you should provide all details of the differences between the deployed version and the development version, if any, including:
-- Different values for environment variables (Heroku Config Vars)?
-- Different configuration files?
-- Separate git branch?
+I pushed my work to GITHUB https://github.com/jjackson19862017/Milestone4_Recipes
 
-In addition, if it is not obvious, you should also describe how to run your code locally.
+The application was deployed from GITHUB to Heroku at http://ms4recipes.herokuapp.com/
 
+My database is stored on MongoDB and is setup within Heroku.
 
 ## Credits
 
-### Content
-- The text for section Y was copied from the [Wikipedia article Z](https://en.wikipedia.org/wiki/Z)
+I would like to thank, 
+- Aaron (mentor at code insitutite) for making sense out of it and giving me the pushes I needed.
+- Kitty from Slack for always providing help when I needed it, she doesnt even know me either.  Which I think is great. 
+- Sam for giving my site a once over and thinking of some good improvements.
+- YouTube, for various videos.  Some panned out, and someothers didn't
+- Slack Community
 
 ### Media
 The main image used is from https://www.forksoverknives.com/plant-based-primer-beginners-guide-starting-plant-based-diet/#gs.w27a6h
@@ -98,7 +214,10 @@ The images and recipes that I used were from the https://www.bbcgoodfood.com/
 
 ### Acknowledgements
 
-- I received inspiration for this project from X
+Due to being marked down on my previous project, I tried to make an effort with the write up this time.
+
+The Readme finishes here, however if you wish to proceed beyond this point this is my diary to show you how I achieve my project.
+
 
 # Timeline
 
@@ -339,6 +458,18 @@ Nearly completed changing Details Page, just need to put the Recipe Protection i
 
 Tried to setup the email input validation, so that it would check to see if your email would match up with the email stored, unfortunately need to work it out.  As its not as easy as i first thought.
 
+#### Test
+
+##### Purpose
+To see if a users email would match up with the email stored in their recipe.
+##### Method
+Typed in jjackson19862017@gmail.com in the search field on the detailsrecipe.html
+##### Outcome
+Fails
+##### Fix
+Researching into PyMongo website and Slack.
+
+
 ### Changed Add and Edit Recipe Pages/Forms
 
 I made them look more like the Recipe Details page for consitancy.
@@ -346,6 +477,16 @@ I made them look more like the Recipe Details page for consitancy.
 ### Clickable Recipe Cards
 
 Made Recipe Cards clickable, this was on feedback saying that most people expect them to be.
+
+#### Test
+
+##### Purpose
+To see if a user could click on a recipe card instead of just the 'view' link.
+##### Method
+Clicked on the image of the recipe
+##### Outcome
+Went to details of the recipe - Expected
+
 
 ## Thursday 20th February 2020,
 
@@ -357,9 +498,17 @@ I have managed to create a simple modal box, that I plan to make sure that the e
 
 ### Edit and Delete Modal
 
+I have modified the Modal box to suit to my Edit Function
+
+I modified the Modal box from the Edit Function to the Delete Function
+
 ### Email Address to editdetails working
 
+Forgot to put the name in the form attributes - Thanks Kitty for pointing this out.
+
 ### Fix
+
+Broke App.py, because I was halfway through doing something and I then uploaded to Github so I had to finish doing what I was doing.
 
 ### Changed Header layout on all pages and added Secure Edit Feature
 
@@ -367,6 +516,15 @@ Have changed the header code, to make it more user friendly.
 
 Have added the Edit Search Feature to find a users Email to show them there recipes.  However on my test of it, unfortunately it shows all.
 
+#### Test
+
+##### Purpose
+To see if a user could search for their recipes
+##### Method
+Typed in jjackson19862017@gmail.com in the search field on the index.html
+##### Outcome
+It finds everything - Not Expected
+##### Fix
 I have now changed the find feature in the App.py, it now finds if the email address is there.
 
 I have also modified the search function so that once it has found a email address it gives you the option of deleting or editing the recipes that the user has made.
@@ -381,8 +539,24 @@ I also removed the edit and delete buttons and modal boxes from the detailsrecip
 
 ### Fixed Delete Error
 
-On testing all my features, I came across an error with my delete recipe.  Previously I tried to have an if statement with the condition, if the two emails matched then it would delete the recipe.
+#### Test
 
+##### Purpose
+To see if a user could search for their recipes
+##### Method
+Typed in jjackson19862017@gmail.com in the search field on the index.html
+##### Outcome
+Took me to the usersrecipe.html - Expected
+
+#### Test
+
+##### Purpose
+To see if a user could delete their recipes
+##### Method
+Clicked on "Delete Recipe"
+##### Outcome
+Error - Previously I tried to have an if statement with the condition, if the two emails matched then it would delete the recipe.
+##### Fix
 However I changed the way I was checking and so I just replaced this with my original delete code using Github History.
 
 ### Clean up Time
@@ -403,3 +577,8 @@ After a bit of a chat with a fellow web designer, I was given some feedback.
 2nd - Add a sorry not found in the search feature, so again its more user friendly.
 
 Thank you Sam
+
+### Readme File
+
+Check out all the additions above.
+
