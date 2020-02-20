@@ -58,22 +58,22 @@
 
     <div class="row">
         <div class="col s12 m6">
-            <button id="myBtn" class="waves-effect waves-light btn-large submitbtn full_width"><i class="material-icons left">edit</i>Edit Recipe</button>
+            <button id="editBtn" class="waves-effect waves-light btn-large submitbtn full_width"><i class="material-icons left">edit</i>Edit Recipe</button>
 
-            <!-- The Modal -->
-            <div id="myModal" class="modal">
+            <!-- The Edit Modal -->
+            <div id="editModal" class="modal">
 
                 <!-- Modal content -->
                 <div class="modal-content">
                     <div class="modal-header">
                         <span class="close">&times;</span>
-                        <h2>User Check</h2>
+                        <h4>User Check For Editing Recipe...</h4>
                     </div>
                     <div class="modal-body">
                         <p>Please enter your Email Address that you typed in when you created this recipe.</p>
                         <p>Thank you.</p>
 
-                        <form action="">
+                        <form action="{{url_for('edit_recipe', recipe_id=recipe._id)}}" method="POST">
                             <div class="form-group">
                                 <label for="Useremail">Email address</label>
                                 <input type="email" class="form-control" id="Useremail" placeholder="Email" required>
@@ -86,7 +86,31 @@
             </div>
         </div>
         <div class="col s12 m6">
-            <a href="{{url_for('delete_recipe', recipe_id=recipe._id)}}" class="waves-effect waves-light btn-large submitbtn full_width"><i class="material-icons left">delete</i>DELETE RECIPE</a>
+            <button id="deleteBtn" class="waves-effect waves-light btn-large submitbtn full_width"><i class="material-icons left">delete</i>Delete Recipe</button>
+            <!-- The Delete Modal -->
+            <div id="deleteModal" class="modal">
+
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <span class="close">&times;</span>
+                        <h4>User Check For Deleting Recipe...</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>Please enter your Email Address that you typed in when you created this recipe.</p>
+                        <p>Thank you.</p>
+
+                        <form action="{{url_for('delete_recipe', recipe_id=recipe._id)}}" method="POST">
+                            <div class="form-group">
+                                <label for="Useremail">Email address</label>
+                                <input type="email" class="form-control" id="Useremail" placeholder="Email" required>
+                                <br>
+                            </div>
+                            <button type="submit" class="waves-effect waves-light btn-large submitbtn">Submit</button></form>
+                    </div>
+                </div>
+
+            </div>
         </div>
         </form>
     </div>

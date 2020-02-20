@@ -354,3 +354,5 @@ Made Recipe Cards clickable, this was on feedback saying that most people expect
 Using some help from https://www.w3schools.com/howto/howto_css_modals.asp .
 
 I have managed to create a simple modal box, that I plan to make sure that the emails match so that a recipe can only be editted if the email addresses match.
+
+### Edit and Delete Modal

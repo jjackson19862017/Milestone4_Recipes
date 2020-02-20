@@ -1,10 +1,10 @@
 $("document").ready(function() {
     // Get the modal
-    var modal = document.getElementById("myModal");
-
+    var modal = document.getElementById("editModal");
+    var modal = document.getElementById("deleteModal");
     // Get the button that opens the modal
-    var btn = document.getElementById("myBtn");
-
+    var btn = document.getElementById("editBtn");
+    var btn = document.getElementById("deleteBtn");
     // Get the <span> element that closes the modal
     var span = document.getElementsByClassName("close")[0];
 
