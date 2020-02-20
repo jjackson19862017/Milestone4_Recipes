@@ -54,13 +54,41 @@
             </div>
         </div>
     </div>
+    <!-- Trigger/Open The Modal -->
+
     <div class="row">
         <div class="col s12 m6">
-            <a href="{{url_for('edit_recipe', recipe_id=recipe._id)}}" class="waves-effect waves-light btn-large submitbtn full_width"><i class="material-icons left">edit</i>EDIT RECIPE</a>
+            <button id="myBtn" class="waves-effect waves-light btn-large submitbtn full_width"><i class="material-icons left">edit</i>Edit Recipe</button>
+
+            <!-- The Modal -->
+            <div id="myModal" class="modal">
+
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <span class="close">&times;</span>
+                        <h2>User Check</h2>
+                    </div>
+                    <div class="modal-body">
+                        <p>Please enter your Email Address that you typed in when you created this recipe.</p>
+                        <p>Thank you.</p>
+
+                        <form action="">
+                            <div class="form-group">
+                                <label for="Useremail">Email address</label>
+                                <input type="email" class="form-control" id="Useremail" placeholder="Email" required>
+                                <br>
+                            </div>
+                            <button type="submit" class="waves-effect waves-light btn-large submitbtn">Submit</button></form>
+                    </div>
+                </div>
+
+            </div>
         </div>
         <div class="col s12 m6">
             <a href="{{url_for('delete_recipe', recipe_id=recipe._id)}}" class="waves-effect waves-light btn-large submitbtn full_width"><i class="material-icons left">delete</i>DELETE RECIPE</a>
         </div>
         </form>
     </div>
-</div>{% endblock %}
+</div>
+{% endblock %}

@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
     <!--    My CSS Code     -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/mystyle.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/modalbox.css')}}" type="text/css">
     <!--    Let browser know website is optimized for mobile    -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -119,7 +120,6 @@
             </div>
         </div>
     </footer>
-
     <!--    Import jQuery before materialize.js     -->
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <!--    Compiled and minified JavaScript        -->
@@ -133,6 +133,7 @@
             $(".dropdown-trigger").dropdown();
         });
     </script>
+    <script src="{{ url_for('static', filename='js/myscript.js')}}"></script>
 </body>
 
 </html>
