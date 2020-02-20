@@ -1,6 +1,26 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %} {% block content %} {% if rec_count == 0 %}
+<!-- If no recipes were found for this keyword, display a user message -->
+<h4 class="card-title blue_title_card no_margin">Sorry but there is nothing found when searching for {{ query }}.</h4>
+<!-- Search Feature for all the recipes -->
+<div class="blue darken-4 center white-text">
+    <div class="row">
+        <form action="{{ url_for('find_recipes') }}" method="POST">
+            <div class="search-bar">
+                <div class="col s12 m2">
+                    <h4>Try Again:</h4>
+                </div>
+                <div class="col s12 m6">
+                    <input id="search_field" type="search" required="" name="search_field">
+                </div>
+                <div class="col s12 m4">
+                    <button class="btn submit_btn" type="submit">Go Find Recipes</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+{% else %}
 <h4 class="card-title blue_title_card no_margin">Results for: {{ query }}</h4>
-
 <div class="row">
     {% for recipe in recipes %}
     <div class="col s12 m6 l4">
@@ -21,5 +41,5 @@
             </div>
         </div>
     </div>
-    {% endfor %}
+    {% endfor %} {% endif %}
 </div>{% endblock %}

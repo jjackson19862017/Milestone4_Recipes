@@ -394,3 +394,12 @@ Updated app.py with comments to make it more readable for other people.
 Updated base.html with comments to make it more readable for other people.
 Updated index.html with comments to make it more readable for other people.
 Updated mystyle.css with comments to make it more readable for other people.
+
+### Feedback off Sam
+
+After a bit of a chat with a fellow web designer, I was given some feedback.
+
+1st - Change the Email text so that its more understandable to users using the system.
+2nd - Add a sorry not found in the search feature, so again its more user friendly.
+
+Thank you Sam

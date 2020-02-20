@@ -123,9 +123,10 @@ def find_recipes():
         mongo.db.recipes.create_index( [("$**", 'text')] )
          # search with the search term that came through the form
         cursor = mongo.db.recipes.find({ "$text": { "$search": search_field } })
+        recipes_count = cursor.count()
         recipes = [recipe for recipe in cursor]
         # send recipes to page
-        return render_template('searchrecipes.html', recipes=recipes, query=search_field)
+        return render_template('searchrecipes.html', recipes=recipes, query=search_field, rec_count=recipes_count)
     return render_template('searchrecipes.html')
 
 """Search Mongo for Users Email"""
