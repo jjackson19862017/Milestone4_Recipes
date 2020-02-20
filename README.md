@@ -384,3 +384,13 @@ I also removed the edit and delete buttons and modal boxes from the detailsrecip
 On testing all my features, I came across an error with my delete recipe.  Previously I tried to have an if statement with the condition, if the two emails matched then it would delete the recipe.
 
 However I changed the way I was checking and so I just replaced this with my original delete code using Github History.
+
+### Clean up Time
+
+Deleted my Javascript file as this was meant to be used for the Modal Boxes, however I removed this feature.
+Deleted my modalbox.css file as this was meant to be used for the Modal Boxes, however I removed this feature.
+
+Updated app.py with comments to make it more readable for other people.
+Updated base.html with comments to make it more readable for other people.
+Updated index.html with comments to make it more readable for other people.
+Updated mystyle.css with comments to make it more readable for other people.

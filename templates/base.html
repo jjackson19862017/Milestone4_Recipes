@@ -50,8 +50,8 @@
                     </div>
                 </li>
                 <li><a href="{{ url_for('view_recipes') }}" class="waves-effect blue-text text-accent-1"><i class="material-icons left blue-text text-accent-1">local_dining</i>View All Recipes</a></li>
-                <!-- Dropdown Trigger -->
-                <li><a class="dropdown-button blue-text text-accent-1" href="#!" data-activates="dropdown1">Quick Searches<i class="material-icons left blue-text text-accent-1">arrow_drop_down</i></a></li>
+                <!-- Dropdown Trigger - Not Finished Yet -->
+                <!--<li><a class="dropdown-button blue-text text-accent-1" href="#!" data-activates="dropdown1">Quick Searches<i class="material-icons left blue-text text-accent-1">arrow_drop_down</i></a></li>-->
                 <li><a href="{{ url_for('add_recipe') }}" class="waves-effect blue-text text-accent-1"><i class="material-icons left blue-text text-accent-1">add</i>Add Recipe</a></li>
                 <li>
                     <div class="divider"></div>
@@ -72,7 +72,9 @@
     </div>
 
     <div class="row">
-        {% block header %} {% endblock %}
+        {% block header %}
+        <!-- This will contain they details that are featured underneath the banner picture on each page -->
+        {% endblock %}
     </div>
 
     <div class="row">
@@ -80,6 +82,7 @@
             {% block content %} {% endblock %}
         </div>
     </div>
+    <!-- Just a bit of information about myself and hoping to attract some attention from hopefully working opportunities -->
     <footer class="page-footer blue darken-4">
         <div class="container">
             <div class="row">
@@ -115,7 +118,6 @@
             $(".dropdown-trigger").dropdown();
         });
     </script>
-    <script src="{{ url_for('static', filename='js/myscript.js')}}"></script>
 </body>
 
 </html>

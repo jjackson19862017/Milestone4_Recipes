@@ -26,6 +26,7 @@ def view_recipes():
 """ Page that allows you to add Recipes """
 @app.route('/add_recipe')
 def add_recipe():
+    """ Gets all my collections ready for putting into Drop Menus """
     the_difficulty = mongo.db.difficulty.find()
     the_meal_type = mongo.db.mealtype.find()
     the_healthy = mongo.db.healthy.find()
@@ -34,6 +35,7 @@ def add_recipe():
 """ Sends the New Recipe to Mongo """
 @app.route('/insert_recipe', methods=['POST'])
 def insert_recipe():
+    """ Inserts all fields into a record """
     recipes=mongo.db.recipes
     recipes.insert_one({
 
@@ -59,7 +61,9 @@ def insert_recipe():
 """ Page that allows you to edit Recipes """
 @app.route('/edit_recipe/<recipe_id>', methods=['GET','POST'])
 def edit_recipe(recipe_id):
+    """ Gets the correct recipe using the find_one function and the recipe_id """
     the_recipe =  mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+    """ Gets all my collections ready for putting into Drop Menus """
     the_difficulty = mongo.db.difficulty.find()
     the_meal_type = mongo.db.mealtype.find()
     the_healthy = mongo.db.healthy.find()
@@ -68,6 +72,7 @@ def edit_recipe(recipe_id):
 """ Function that updates a recipe after being edited """
 @app.route('/update_recipe/<recipe_id>', methods=["POST"])
 def update_recipe(recipe_id):
+    """ Updates all fields into a record """
     recipes = mongo.db.recipes
     recipes.update( {'_id': ObjectId(recipe_id)},
     {
@@ -137,6 +142,8 @@ def find_user():
         return render_template('userrecipes.html', recipes=recipes, query=user_field)
     return render_template('userrecipes.html')
 
+""" Quick Search Feature - Not Finished """
+"""
 @app.route('/find_recipes')
 def search_recipes():
     mycol=mongo.db.recipes
@@ -144,7 +151,7 @@ def search_recipes():
     query = mycol.find(myquery)
     recipes = [recipe for recipe in myquery]
     return render_template('searchrecipes.html',recipes=recipes, query="Easy")
-
+"""
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),

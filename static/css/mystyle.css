@@ -7,6 +7,9 @@ body {
 }
 
 
+/* Form Custom Code - Originally from Materlize */
+
+
 /* label color */
 
 .input-field label {
@@ -52,6 +55,12 @@ body {
 .input-field .prefix.active {
     color: ##0D47A1 !important;
 }
+
+
+/* My styles */
+
+
+/* I know theres alot of repeated code however I will in future I will reduce it */
 
 .submitbtn {
     background-color: #0D47A1;

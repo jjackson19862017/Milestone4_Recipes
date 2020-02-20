@@ -9,6 +9,7 @@
             <p>So if you want to start browsing either click below or on the Navigation Bar.</p>
             <p>Here are the top six dishes.</p>
         </div>
+        <!-- Search Feature for all the recipes -->
         <div class="row">
             <form action="{{ url_for('find_recipes') }}" method="POST">
                 <div class="search-bar">
@@ -24,6 +25,7 @@
                 </div>
             </form>
         </div>
+        <!-- Search Feature for users recipes -->
         <div class="row">
             <form action="{{ url_for('find_user') }}" method="POST">
                 <div class="search-bar">
