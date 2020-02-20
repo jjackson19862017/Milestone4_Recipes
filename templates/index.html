@@ -1,13 +1,43 @@
 {% extends 'base.html' %} {% block header %}
 <!--    Header Text     -->
-<div class="card blue darken-4 no_margin">
-    <div class="card-content white-text">
-        <div class="col s12 m6">
+<div class="blue darken-4 center white-text">
+    <div class="row ">
+        <div class="col s12">
             <p>Welcome to Refreshing Edible Cuisine In Portable External Support</p>
             <p>(RECIPES for short) this is a place where people can come together as a community.</p>
             <p> You can share recipes and ideas with one another.</p>
             <p>So if you want to start browsing either click below or on the Navigation Bar.</p>
             <p>Here are the top six dishes.</p>
+        </div>
+        <div class="row">
+            <form action="{{ url_for('find_recipes') }}" method="POST">
+                <div class="search-bar">
+                    <div class="col s12 m2">
+                        <h4>Search:</h4>
+                    </div>
+                    <div class="col s12 m6">
+                        <input id="search_field" type="search" required="" name="search_field">
+                    </div>
+                    <div class="col s12 m4">
+                        <button class="btn submit_btn" type="submit">Go Find Recipes</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="row">
+            <form action="{{ url_for('find_user') }}" method="POST">
+                <div class="search-bar">
+                    <div class="col s12 m2">
+                        <h4>Insert Email for Editing:</h4>
+                    </div>
+                    <div class="col s12 m6">
+                        <input id="user_field" type="search" required="" name="user_field">
+                    </div>
+                    <div class="col s12 m4">
+                        <button class="btn submit_btn" type="submit">Submit</button>
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
 

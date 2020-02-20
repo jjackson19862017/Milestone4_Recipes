@@ -57,17 +57,14 @@ def insert_recipe():
     return redirect(url_for('view_recipes'))
 
 """ Page that allows you to edit Recipes """
-@app.route('/edit_recipe/<recipe_id>', methods=["POST"])
+@app.route('/edit_recipe/<recipe_id>', methods=['GET','POST'])
 def edit_recipe(recipe_id):
-    supplied_email = request.form.get('useremail')
-    if supplied_email == mongo.db.recipes.email:
-        the_recipe =  mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
-        the_difficulty = mongo.db.difficulty.find()
-        the_meal_type = mongo.db.mealtype.find()
-        the_healthy = mongo.db.healthy.find()
-        supplied_email = request.form.get('useremail')
-        return render_template('editrecipe.html', recipe=the_recipe, difficulty = the_difficulty, mealtype = the_meal_type, healthy=the_healthy, suppliedemail=supplied_email, page_title="EDIT RECIPE")
-    return redirect(url_for('view_recipes'))
+    the_recipe =  mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+    the_difficulty = mongo.db.difficulty.find()
+    the_meal_type = mongo.db.mealtype.find()
+    the_healthy = mongo.db.healthy.find()
+    return render_template('editrecipe.html', recipe=the_recipe, difficulty = the_difficulty, mealtype = the_meal_type, healthy=the_healthy, page_title="EDIT RECIPE")
+    
 """ Function that updates a recipe after being edited """
 @app.route('/update_recipe/<recipe_id>', methods=["POST"])
 def update_recipe(recipe_id):
@@ -125,6 +122,20 @@ def find_recipes():
         recipes = [recipe for recipe in cursor]
         # send recipes to page
         return render_template('searchrecipes.html', recipes=recipes, query=search_field)
+    return render_template('searchrecipes.html')
+
+"""Search Mongo for Users Email"""
+@app.route('/find_user', methods=['GET', 'POST'])
+def find_user():
+    if request.method=='POST':        
+        # get the search term
+        user_field = request.form.get("user_field")
+        #  create the index
+        # search with the search term that came through the form
+        cursor = mongo.db.recipes.find({ "email": user_field })
+        recipes = [recipe for recipe in cursor]
+        # send recipes to page
+        return render_template('searchrecipes.html', recipes=recipes, query=user_field)
     return render_template('searchrecipes.html')
 
 @app.route('/find_recipes')

@@ -356,3 +356,20 @@ Using some help from https://www.w3schools.com/howto/howto_css_modals.asp .
 I have managed to create a simple modal box, that I plan to make sure that the emails match so that a recipe can only be editted if the email addresses match.
 
 ### Edit and Delete Modal
+
+### Email Address to editdetails working
+
+### Fix
+
+### Changed Header layout on all pages and added Secure Edit Feature
+
+Have changed the header code, to make it more user friendly.  
+
+Have added the Edit Search Feature to find a users Email to show them there recipes.  However on my test of it, unfortunately it shows all.
+
+I have now changed the find feature in the App.py, it now finds if the email address is there.
+
+I have also modified the search function so that once it has found a email address it gives you the option of deleting or editing the recipes that the user has made.
+
+However on writing the read me I have just thought of an over sight, I will change this in my next update.
+

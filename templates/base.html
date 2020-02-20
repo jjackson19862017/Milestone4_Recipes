@@ -32,19 +32,6 @@
             <ul class="right hide-on-med-and-down">
                 <li><a href="{{ url_for('view_recipes') }}" class="blue-text text-accent-1"><i class="material-icons left blue-text text-accent-1">local_dining</i>View All Recipes</a></li>
                 <li><a href="{{ url_for('add_recipe') }}" class="blue-text text-accent-1"><i class="material-icons left blue-text text-accent-1">add</i>Add Recipe</a></li>
-
-            </ul>
-        </div>
-
-        <div class="nav-wrapper blue darken-4">
-            <form action="{{ url_for('find_recipes') }}" method="POST">
-                <div class="input-field search-bar">
-                    <input id="search_field" type="search" required="" name="search_field">
-                    <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-                    <i class="material-icons">close</i>
-                </div>
-                <button class="btn submit_btn" type="submit">Go Find Recipes</button>
-            </form>
             </ul>
             <!--    Side Loading Nav Bar Main Code  -->
             <ul id="slide-out" class="side-nav blue darken-4">
@@ -69,14 +56,6 @@
                 <li>
                     <div class="divider"></div>
                 </li>
-                <form action="{{ url_for('find_recipes') }}" method="POST">
-                    <div class="input-field search-bar">
-                        <input id="search_field" type="search" required="" name="search_field">
-                        <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-                        <i class="material-icons">close</i>
-                    </div>
-                    <button class="btn submit_btn" type="submit">Go Find Recipes</button>
-                </form>
                 <li><a class="subheader white-text name center">Check out how its build at:</a></li>
                 <li><a class="blue-text text-accent-1 center" href="https://github.com/jjackson19862017">My GitHub</a></li>
                 <li><a class="blue-text text-accent-1 center" href="https://github.com/jjackson19862017/Milestone4_Recipes">Recipes Repo</a></li>
@@ -85,13 +64,16 @@
 
     </nav>
     <!--    Header bar for each template html    -->
-    <div class="container">
+    <div>
         <div class="row">
             <img src="{{ url_for('static', filename='images/foodcard.jpg')}}" class="my_banner">
             <h4 class="card-title blue_title_card no_margin">{{ page_title }}</h4>
         </div>
     </div>
-    {% block header %} {% endblock %}
+
+    <div class="row">
+        {% block header %} {% endblock %}
+    </div>
 
     <div class="row">
         <div class="blue accent-1">

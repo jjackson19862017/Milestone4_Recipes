@@ -1,14 +1,10 @@
 {% extends 'base.html' %} {% block header %}
 <!--    Header Text     -->
 <div class="card blue darken-4 no_margin">
-    <div class="card-content white-text">
+    <div class="card-content white-text center">
         <p>Here is all our recipe, added by users.</p>
         <br>
         <p>Don't forget you can also contribute to this collection as well by clicking on ADD RECIPE.</p>
-    </div>
-    <div class="card-action">
-        <a href="#" class="blue-text text-accent-1">Search Recipes</a>
-        <a href="{{ url_for('add_recipe') }}" class="blue-text text-accent-1">Add Recipe</a>
     </div>
 </div>
 
@@ -43,15 +39,6 @@
     <div class="row">
         <div class="col s12">
             <p class="rnd_blue_title_card">Submitted by {{recipe.author}}</p>
-        </div>
-    </div>
-    <div class="row">
-        <div class="row white_input_field">
-            <!--User Email Address-->
-            <div class="input-field col s12 ">
-                <input id="confirmemail" name="confirmemail" type="email">
-                <label for="confirmemail" class="blue-text text-darken-4">Enter your Email to Confirm that you can Edit or Delete this Recipe.</label>
-            </div>
         </div>
     </div>
     <!-- Trigger/Open The Modal -->
