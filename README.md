@@ -582,3 +582,7 @@ Thank you Sam
 
 Check out all the additions above.
 
+### Shameful Cheat
+
+I changed the banner to a image of Kitchen Tools, so that it mentions that we sell Kitchen Tools.
+Like it says in the brief.  I should really do more, however I could add this feature later.  I really need to finish the course and time is not a luxury.
