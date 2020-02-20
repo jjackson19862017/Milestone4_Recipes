@@ -93,9 +93,8 @@ def update_recipe(recipe_id):
 
 """ Page that deletes recipes """
 @app.route('/delete_recipe/<recipe_id>', methods=['GET'])
-def delete_recipe(recipe_id, confirmemail):
-    if mongo.db.recipes.email == request.form.get('confirmemail'):
-        mongo.db.recipes.remove({'_id': ObjectId(recipe_id)})
+def delete_recipe(recipe_id):
+    mongo.db.recipes.remove({'_id': ObjectId(recipe_id)})
     return redirect(url_for('view_recipes'))
 
 """ Page that allows you to see the Recipe in Detail """

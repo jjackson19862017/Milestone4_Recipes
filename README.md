@@ -378,3 +378,9 @@ However on writing the read me I have just thought of an over sight, I will chan
 To fix my little oversight, I copied the searchrecipes.html.  Renamed it userrecipes.html, then used Github to look up the history of the file and replaced the edit and delete feature with the view feature.
 
 I also removed the edit and delete buttons and modal boxes from the detailsrecipe.html
+
+### Fixed Delete Error
+
+On testing all my features, I came across an error with my delete recipe.  Previously I tried to have an if statement with the condition, if the two emails matched then it would delete the recipe.
+
+However I changed the way I was checking and so I just replaced this with my original delete code using Github History.
