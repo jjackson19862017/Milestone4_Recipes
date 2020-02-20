@@ -135,8 +135,8 @@ def find_user():
         cursor = mongo.db.recipes.find({ "email": user_field })
         recipes = [recipe for recipe in cursor]
         # send recipes to page
-        return render_template('searchrecipes.html', recipes=recipes, query=user_field)
-    return render_template('searchrecipes.html')
+        return render_template('userrecipes.html', recipes=recipes, query=user_field)
+    return render_template('userrecipes.html')
 
 @app.route('/find_recipes')
 def search_recipes():

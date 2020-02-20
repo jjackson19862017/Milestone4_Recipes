@@ -373,3 +373,8 @@ I have also modified the search function so that once it has found a email addre
 
 However on writing the read me I have just thought of an over sight, I will change this in my next update.
 
+### Created User Recipe Page
+
+To fix my little oversight, I copied the searchrecipes.html.  Renamed it userrecipes.html, then used Github to look up the history of the file and replaced the edit and delete feature with the view feature.
+
+I also removed the edit and delete buttons and modal boxes from the detailsrecipe.html
