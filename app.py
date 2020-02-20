@@ -66,8 +66,8 @@ def edit_recipe(recipe_id):
         the_meal_type = mongo.db.mealtype.find()
         the_healthy = mongo.db.healthy.find()
         supplied_email = request.form.get('useremail')
-    return render_template('editrecipe.html', recipe=the_recipe, difficulty = the_difficulty, mealtype = the_meal_type, healthy=the_healthy, suppliedemail=supplied_email, page_title="EDIT RECIPE")
-return render_template('in')
+        return render_template('editrecipe.html', recipe=the_recipe, difficulty = the_difficulty, mealtype = the_meal_type, healthy=the_healthy, suppliedemail=supplied_email, page_title="EDIT RECIPE")
+    return redirect(url_for('view_recipes'))
 """ Function that updates a recipe after being edited """
 @app.route('/update_recipe/<recipe_id>', methods=["POST"])
 def update_recipe(recipe_id):
