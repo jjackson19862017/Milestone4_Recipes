@@ -66,20 +66,20 @@
                 <!-- Modal content -->
                 <div class="modal-content">
                     <div class="modal-header">
-                        <span class="close">&times;</span>
+                        <span class="close 1">&times;</span>
                         <h4>User Check For Editing Recipe...</h4>
                     </div>
                     <div class="modal-body">
                         <p>Please enter your Email Address that you typed in when you created this recipe.</p>
-                        <p>Thank you.</p>
-
+                        <p class="hidden">{{ recipe._id}}</p>
                         <form action="{{url_for('edit_recipe', recipe_id=recipe._id)}}" method="POST">
                             <div class="form-group">
-                                <label for="Useremail">Email address</label>
-                                <input type="email" class="form-control" id="Useremail" placeholder="Email" required>
+                                <label for="useremail">Email address</label>
+                                <input type="email" class="form-control" id="useremail" name="useremail" placeholder="Email" required>
                                 <br>
                             </div>
-                            <button type="submit" class="waves-effect waves-light btn-large submitbtn">Submit</button></form>
+                            <button type="submit" class="waves-effect waves-light btn-large submitbtn">Submit</button>
+                        </form>
                     </div>
                 </div>
 
@@ -93,12 +93,11 @@
                 <!-- Modal content -->
                 <div class="modal-content">
                     <div class="modal-header">
-                        <span class="close">&times;</span>
+                        <span class="close 2">&times;</span>
                         <h4>User Check For Deleting Recipe...</h4>
                     </div>
                     <div class="modal-body">
                         <p>Please enter your Email Address that you typed in when you created this recipe.</p>
-                        <p>Thank you.</p>
 
                         <form action="{{url_for('delete_recipe', recipe_id=recipe._id)}}" method="POST">
                             <div class="form-group">
