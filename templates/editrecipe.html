@@ -17,7 +17,7 @@
                 <p class="rnd_blue_title_card">Recipe Name:- </p>
             </div>
             <div class="input-field inline col s12 m6">
-                <input id="recipe_name" name="recipe_name" type="text" value="{{ recipe.recipe_name }}" data-length="24" maxlength="24">
+                <input id="recipe_name" name="recipe_name" type="text" value="{{ recipe.recipe_name }}" data-length="24" maxlength="24" required>
                 <label for="recipe_name" class="blue-text text-darken-4"></label>
             </div>
         </div>
@@ -27,7 +27,7 @@
                 <p class="rnd_blue_title_card">Authors Name:- </p>
             </div>
             <div class="input-field inline col s12 m6">
-                <input id="author" name="author" type="text" value="{{ recipe.author }}">
+                <input id="author" name="author" type="text" value="{{ recipe.author }}" required>
                 <label for="author" class="blue-text text-darken-4"></label>
             </div>
         </div>
@@ -37,8 +37,8 @@
                 <p class="rnd_blue_title_card">Recipe Image:- </p>
             </div>
             <div class="input-field col s6">
-                <input id="recipe_image" name="recipe_image" type="text" value="{{ recipe.recipe_image }}">
-                <label for="recipe_image" class="blue-text text-darken-4">Image Address</label>
+                <input id="recipe_image" name="recipe_image" type="text" value="{{ recipe.recipe_image }}" required>
+                <label for="recipe_image" class="blue-text text-darken-4"></label>
             </div>
         </div>
         <div class="row">
@@ -47,8 +47,8 @@
                 <p class="rnd_blue_title_card">Recipe Description:- </p>
             </div>
             <div class="input-field col s12 m6">
-                <textarea id="description" name="description" class="materialize-textarea" data-length="110" maxlength="110">{{ recipe.description }}</textarea>
-                <label for="description" class="blue-text text-darken-4">Please Insert Recipe Description</label>
+                <textarea id="description" name="description" class="materialize-textarea" data-length="110" maxlength="110" required>{{ recipe.description }}</textarea>
+                <label for="description" class="blue-text text-darken-4"></label>
             </div>
         </div>
         <div class="row">
@@ -111,21 +111,21 @@
         <div class="row">
             <!--Prep Time-->
             <div class="col s12 m6">
-                <p class="rnd_blue_title_card">How long is Preperation Time :- </p>
+                <p class="rnd_blue_title_card">How long is Preperation Time (Minutes):- </p>
             </div>
             <div class="input-field col s12 m6">
-                <input id="prep_time" name="prep_time" type="number" min="0" max="120" step="1" value="{{ recipe.prep_time }}">
-                <label for="prep_time" class="blue-text text-darken-4">Prep Time(Minutes)</label>
+                <input id="prep_time" name="prep_time" type="number" min="0" max="120" step="1" value="{{ recipe.prep_time }}" required>
+                <label for="prep_time" class="blue-text text-darken-4"></label>
             </div>
         </div>
         <div class="row">
             <!--Cooking Time-->
             <div class="col s12 m6">
-                <p class="rnd_blue_title_card">How long is Cooking Time :- </p>
+                <p class="rnd_blue_title_card">How long is Cooking Time (Minutes):- </p>
             </div>
             <div class="input-field col s12 m6">
-                <input id="cooking_time" name="cooking_time" type="number" min="0" max="999" step="1" value="{{ recipe.cooking_time }}">
-                <label for="cooking_time" class="blue-text text-darken-4">Cooking Time (Minutes)</label>
+                <input id="cooking_time" name="cooking_time" type="number" min="0" max="999" step="1" value="{{ recipe.cooking_time }}" required>
+                <label for="cooking_time" class="blue-text text-darken-4"></label>
             </div>
         </div>
         <div class="row">
@@ -134,8 +134,8 @@
                 <p class="rnd_blue_title_card">How many people does it Serve? :- </p>
             </div>
             <div class="input-field col s12 m6">
-                <input id="serves" name="serves" type="number" min="1" max="120" step="1" value="{{ recipe.serves }}">
-                <label for="serves" class="blue-text text-darken-4">Serves</label>
+                <input id="serves" name="serves" type="number" min="1" max="120" step="1" value="{{ recipe.serves }}" required>
+                <label for="serves" class="blue-text text-darken-4"></label>
             </div>
         </div>
         <div class="row">
@@ -145,7 +145,7 @@
             </div>
             <div class="input-field col s12 m6">
                 <textarea id="notes" name="notes" class="materialize-textarea">{{ recipe.notes }}</textarea>
-                <label for="notes" class="blue-text text-darken-4">Please Add Any Notes</label>
+                <label for="notes" class="blue-text text-darken-4"></label>
             </div>
         </div>
         <div class="row">
@@ -154,8 +154,8 @@
                 <p class="rnd_blue_title_card">Ingredients, one line for each :- </p>
             </div>
             <div class="input-field col s12 m6">
-                <textarea id="ingredients" name="ingredients" class="materialize-textarea">{{ recipe.ingredients }}</textarea>
-                <label for="ingredients" class="blue-text text-darken-4">ingredients Please</label>
+                <textarea id="ingredients" name="ingredients" class="materialize-textarea" required>{{ recipe.ingredients }}</textarea>
+                <label for="ingredients" class="blue-text text-darken-4"></label>
             </div>
         </div>
         <div class="row">
@@ -164,18 +164,18 @@
                 <p class="rnd_blue_title_card">Method :- </p>
             </div>
             <div class="input-field col s12 m6">
-                <textarea id="method" name="method" class="materialize-textarea">{{ recipe.method }}</textarea>
-                <label for="method" class="blue-text text-darken-4">Method</label>
+                <textarea id="method" name="method" class="materialize-textarea" required>{{ recipe.method }}</textarea>
+                <label for="method" class="blue-text text-darken-4"></label>
             </div>
         </div>
         <div class="row">
             <!--User Email Address-->
             <div class="col s12 m6">
-                <p class="rnd_blue_title_card">Email Address :- </p>
+                <p class="rnd_blue_title_card">Email Address (This is so you can edit or delete your recipes) :- </p>
             </div>
             <div class="input-field col s12 m6">
-                <input id="email" name="email" type="email" value="{{ recipe.email }}">
-                <label for="email" class="blue-text text-darken-4">Email - (This is required so you can edit or delete your recipes)</label>
+                <input id="email" name="email" type="email" value="{{ recipe.email }}" required>
+                <label for="email" class="blue-text text-darken-4"></label>
             </div>
         </div>
         <div class="row">
