@@ -154,6 +154,15 @@ def search_recipes():
     return render_template('searchrecipes.html',recipes=recipes, query="Easy")
 """
 
+""" Products Page """
+@app.route('/view_products')
+def view_products():
+    """ Sorts by Product Name in ascending order """
+    products=mongo.db.products.find().sort('product_name', 1)
+
+    return render_template("products.html", products=products, page_title="OUR PRODUCTS")
+
+
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
             port=os.environ.get('PORT'),

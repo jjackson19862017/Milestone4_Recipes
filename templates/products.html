@@ -1,0 +1,29 @@
+{% extends 'base.html' %} {% block header %}
+<!--    Header Text     -->
+<div class="blue darken-4 center white-text">
+    <div class="row ">
+        <div class="col s12">
+            <p>Checkout all the products we sell.</p>
+        </div>
+    </div>
+
+    {% endblock %} {% block content %}
+    <!-- Creates the Card for each Product Item in the Collection -->
+    <div class="row">
+        {% for product in products %}
+        <div class="col s12 m6 l4">
+            <div class="card medium">
+                <div class="card-image">
+                    <img src="{{ product.product_image }}" alt="">
+                    <span class="card-title blue_title_card">{{ product.product_name }}</span>
+                </div>
+                <div class="card-content center">
+                    <p>{{ product.price }}</p>
+                </div>
+                <div class="card-action">
+                    <a href="{{ product.address }}">Shop</a></div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% endblock %}

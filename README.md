@@ -36,6 +36,10 @@ Index Wireframe -
 
 ![alt text](/static/images/indexwireframe.png "Index Wireframe")
 
+Form Wireframe - 
+
+![alt text](/static/images/FormFrame.png "Index Wireframe")
+
 This is what I started with and then I just changed it to suit what my ability was.
 
 ## Features
@@ -592,3 +596,15 @@ Like it says in the brief.  I should really do more, however I could add this fe
 ### Updated Forms
 
 Updated addrecipe.html and editrecipe.html with removing the labels and adding required elements.
+
+
+### Aarons Feedback
+
+1. Tidy up the Users Recipes Search. - Done
+2. Remove the stripey banner area. - Done 
+3. Move the email sign in to the nav bar. - Done
+4. Couple more wireframes. - Done
+5. Flask handling 404 and 500. 
+6. Tools for selling. - Done
+
+Just need to add the Flask Handling Errors

@@ -1,6 +1,6 @@
 {% extends 'base.html' %} {% block content %} {% if rec_count == 0 %}
 <!-- If no recipes were found for this keyword, display a user message -->
-<h4 class="card-title blue_title_card no_margin">Sorry but there is nothing found when searching for {{ query }}.</h4>
+<h4 class="card-title rnd_blue_title_card no_margin">Sorry but there is nothing found when searching for {{ query }}.</h4>
 <!-- Search Feature for all the recipes -->
 <div class="blue darken-4 center white-text">
     <div class="row">
@@ -20,7 +20,7 @@
     </div>
 </div>
 {% else %}
-<h4 class="card-title blue_title_card no_margin">Results for: {{ query }}</h4>
+<h4 class="card-title rnd_blue_title_card no_margin">Results for: {{ query }}</h4>
 <div class="row">
     {% for recipe in recipes %}
     <div class="col s12 m6 l4">

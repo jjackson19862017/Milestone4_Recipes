@@ -1,6 +1,7 @@
 {% extends 'base.html' %} {% block content %}
-<h4 class="card-title blue_title_card no_margin">Results for: {{ query }}</h4>
-
+<div class="container">
+    <h4 class="card-title rnd_blue_title_card no_margin">Results for: {{ query }}</h4>
+</div>
 <div class="row">
     {% for recipe in recipes %}
     <div class="col s12 m6 l4">

@@ -30,8 +30,18 @@
             <ul id="nav-mobile" class="right hide-on-med-and-down"></ul>
             <a href="{{ url_for('view_recipes') }}" class="brand-logo blue-text text-accent-1">R E C I P E S</a>
             <ul class="right hide-on-med-and-down">
+                <li>
+                    <form action="{{ url_for('find_user') }}" method="POST">
+                        <span class="blue-text text-accent-1">Email Login:</span>
+                        <input id="user_field" type="search" class="nav_user" name="user_field">
+                        <button class="btn submit_btn" type="submit">Login</button>
+
+                    </form>
+                </li>
                 <li><a href="{{ url_for('view_recipes') }}" class="blue-text text-accent-1"><i class="material-icons left blue-text text-accent-1">local_dining</i>View All Recipes</a></li>
                 <li><a href="{{ url_for('add_recipe') }}" class="blue-text text-accent-1"><i class="material-icons left blue-text text-accent-1">add</i>Add Recipe</a></li>
+                <li><a href="{{ url_for('view_products') }}" class="blue-text text-accent-1"><i class="material-icons left blue-text text-accent-1">add</i>Products</a></li>
+
             </ul>
             <!--    Side Loading Nav Bar Main Code  -->
             <ul id="slide-out" class="side-nav blue darken-4">
@@ -57,6 +67,14 @@
                 <!--<li><a class="dropdown-button blue-text text-accent-1" href="#!" data-activates="dropdown1">Quick Searches<i class="material-icons left blue-text text-accent-1">arrow_drop_down</i></a></li>-->
                 <li><a href="{{ url_for('add_recipe') }}" class="waves-effect blue-text text-accent-1"><i class="material-icons left blue-text text-accent-1">add</i>Add Recipe</a></li>
                 <li>
+                    <form action="{{ url_for('find_user') }}" method="POST">
+                        <span class="blue-text text-accent-1 side_left">Email Login:</span>
+                        <input id="user_field" type="search" class="nav_user" name="user_field">
+                        <button class="btn submit_btn side_left" type="submit">Login</button>
+
+                    </form>
+                </li>
+                <li>
                     <div class="divider"></div>
                 </li>
                 <li><a class="subheader white-text name center">Check out how its build at:</a></li>
@@ -68,11 +86,8 @@
     </nav>
     <!--    Header bar for each template html    -->
     <div>
-        <div class="row">
-            <a href="https://www.amazon.co.uk/b/ref=s9_acss_bw_cg_OutletUK_2b1_w?node=19663233031&ref=uk_outsbcd_7&pf_rd_m=A3P5ROKL5A1OLE&pf_rd_s=merchandised-search-top-3&pf_rd_r=43ACSWR9Z88Y7KYZKVZV&pf_rd_t=101&pf_rd_p=04733ddf-9a9e-4e1a-99fc-93b3c51caf58&pf_rd_i=3012216031"
-                target="_blank">
-                <img src="{{ url_for('static', filename='images/cookingtools.jpg')}}" class="my_banner">
-            </a>
+        <div class="row no_bottom_margin">
+            <img src="{{ url_for('static', filename='images/cookingtools.jpg')}}" class="my_banner">
             <h4 class="card-title blue_title_card no_margin">{{ page_title }}</h4>
         </div>
     </div>
