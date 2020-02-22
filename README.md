@@ -66,6 +66,7 @@ Each recipe can be clicked on to view the full recipe as a single recipe.
 - Auto complete in the Search feature to make it more user friendly
 - Quick searches IE Easy, Medium, Hard or by Breakfast, Lunch, Evening, Dessert, Baking
 - The more recipes there are the longer it would take to load, so maybe add some form of pagination.  This is to limit what is seen and used on resources by the system.
+- Could add more products to the products page and include them in the recipes.
 
 ## Technologies Used
 
@@ -608,3 +609,25 @@ Updated addrecipe.html and editrecipe.html with removing the labels and adding r
 6. Tools for selling. - Done
 
 Just need to add the Flask Handling Errors
+
+## Saturday 22nd February 2020,
+
+### Tidying Up
+
+I deleted the views tag on the user recipes.
+
+I have also created a small products database in Mongo using the company "Nisbets".  I found them using google.
+
+Added products to the Mobile Navbar and changed the icon to a shopping basket.
+
+I have created custom error pages, with help from Aaron my mentor and the link he gave me.
+https://codehandbook.org/handle-404-error-python-flask/
+
+I duplicated my index.html and modified it, to display a custom error message and some java code from
+https://stackoverflow.com/questions/3292038/redirect-website-after-certain-amount-of-time
+
+I have now changed my debug to False.
+
+This should be my last commit to Github, (Famous last words).
+
+Before I hand my work in.

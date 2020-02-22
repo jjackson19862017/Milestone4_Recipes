@@ -12,17 +12,19 @@
     <div class="row">
         {% for product in products %}
         <div class="col s12 m6 l4">
-            <div class="card medium">
-                <div class="card-image">
-                    <img src="{{ product.product_image }}" alt="">
-                    <span class="card-title blue_title_card">{{ product.product_name }}</span>
+            <a href="{{ product.address }}" target="_blank">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="{{ product.product_image }}" alt="">
+                        <span class="card-title blue_title_card">{{ product.product_name }}</span>
+                    </div>
+                    <div class="card-content center">
+                        <p>{{ product.price }}</p>
+                    </div>
+                    <div class="card-action">
+                        <a href="{{ product.address }}">Shop</a></div>
                 </div>
-                <div class="card-content center">
-                    <p>{{ product.price }}</p>
-                </div>
-                <div class="card-action">
-                    <a href="{{ product.address }}">Shop</a></div>
-            </div>
+            </a>
         </div>
         {% endfor %}
     </div>

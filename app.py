@@ -163,7 +163,19 @@ def view_products():
     return render_template("products.html", products=products, page_title="OUR PRODUCTS")
 
 
+""" Error Handling """
+""" 404 """
+@app.errorhandler(404) 
+def invalid_route(e): 
+    return render_template("errorfound.html", page_title="404 Error Found")
+
+""" 500 """
+@app.errorhandler(500) 
+def invalid_route(e): 
+    return render_template("errorfound.html", page_title="500 Error Found")
+
+
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
             port=os.environ.get('PORT'),
-            debug=True)
+            debug=False)

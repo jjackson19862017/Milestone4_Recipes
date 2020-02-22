@@ -40,7 +40,7 @@
                 </li>
                 <li><a href="{{ url_for('view_recipes') }}" class="blue-text text-accent-1"><i class="material-icons left blue-text text-accent-1">local_dining</i>View All Recipes</a></li>
                 <li><a href="{{ url_for('add_recipe') }}" class="blue-text text-accent-1"><i class="material-icons left blue-text text-accent-1">add</i>Add Recipe</a></li>
-                <li><a href="{{ url_for('view_products') }}" class="blue-text text-accent-1"><i class="material-icons left blue-text text-accent-1">add</i>Products</a></li>
+                <li><a href="{{ url_for('view_products') }}" class="blue-text text-accent-1"><i class="material-icons left blue-text text-accent-1">shopping_basket</i>Products</a></li>
 
             </ul>
             <!--    Side Loading Nav Bar Main Code  -->
@@ -66,6 +66,8 @@
                 <!-- Dropdown Trigger - Not Finished Yet -->
                 <!--<li><a class="dropdown-button blue-text text-accent-1" href="#!" data-activates="dropdown1">Quick Searches<i class="material-icons left blue-text text-accent-1">arrow_drop_down</i></a></li>-->
                 <li><a href="{{ url_for('add_recipe') }}" class="waves-effect blue-text text-accent-1"><i class="material-icons left blue-text text-accent-1">add</i>Add Recipe</a></li>
+                <li><a href="{{ url_for('view_products') }}" class="waves-effect blue-text text-accent-1"><i class="material-icons left blue-text text-accent-1">shopping_basket</i>Products</a></li>
+
                 <li>
                     <form action="{{ url_for('find_user') }}" method="POST">
                         <span class="blue-text text-accent-1 side_left">Email Login:</span>
